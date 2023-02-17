@@ -1,12 +1,17 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+
+const Title = styled.p`
+  font-family: NotoSansKRBlack;
+`;
 
 const Home = () => {
   const navigate = useNavigate();
   const loading = () => {
     setTimeout(() => {
       navigate('/question');
-    }, 5000);
+    }, 500000);
   };
 
   useEffect(() => {
@@ -16,7 +21,11 @@ const Home = () => {
     };
   }, []);
 
-  return <>Call me by your TEXT</>;
+  return (
+    <>
+      <Title>Call me by your TEXT</Title>
+    </>
+  );
 };
 
 export default Home;

@@ -3,6 +3,8 @@ import { createGlobalStyle } from 'styled-components';
 export const primaryColor = '#D07C81';
 export const secondaryColor = '#79756E';
 export const GlobalStyle = createGlobalStyle`
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
 body {
   display: flex;
   align-items: center;
@@ -11,6 +13,8 @@ body {
   height: 100vh;
   overflow-y: scroll;
   margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;  
+  // border: 5px solid black;
 }
 
 // @media only screen and (max-width: 359px) and (min-width:200px) {
