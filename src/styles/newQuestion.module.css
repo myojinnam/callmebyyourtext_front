@@ -10,25 +10,28 @@
 .top {
     background-color: #FFFFFF;
     opacity: 63%;
-    padding-top: 55px;
-    padding-bottom: 60px;
+    padding-top: 50px;
+    padding-bottom: 40px;
     display: flex;
     flex-direction: column;
+}
+
+/* 메뉴, 옵션 버튼 */
+.topBtn {
+    float: right;
 }
 
 /* 메뉴 버튼 */
 .menuImg {
     float: right;
     margin-right: 20px;
-    width: 23px;
-    height: 24px;
 }
 
 /* 알림창 버튼 */
 .notiImg {
     float: right;
-    width: 80px;
-    height: 80px;
+    margin-top: 20px;
+    margin-right: -45px;
 }
 
 /* 유저명 옆 꽃 이미지 */
@@ -41,7 +44,7 @@
 /* 유저명 + 밑줄 */
 .userName {
     color: #613B3E;
-    font-size: 24px;
+    font-size: 25px;
     border-bottom: 3px solid #CB7980;
     margin-left: 20px;
     width: 300px;
@@ -50,6 +53,7 @@
 /* 포인트 */
 .pointFont {
     margin-top: 5px;
+    margin-left: 230px;
 }
 
 /* 하단 질문 부분 */
@@ -66,6 +70,7 @@
     width: 313px;
     height: 230px;
     background-color: #FFFFFF;
+    margin-top: 40px;
     padding-left: 10px;
     border: 0px;
     border-radius: 13px;

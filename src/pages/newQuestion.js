@@ -5,18 +5,24 @@ class newQuestion extends Component {
     render() {
         const username = '홍길동';
         const point = 500;
+        
+        function addQuestion() {
+            <text> 질문이 생성되었습니다.</text>
+        }
 
         return (
             <div className={styles.main}>
                 <div className={styles.top}>
-                    <img 
-                        className={styles.menuImg}
-                        src={require('../assets/newQuestion_menu.png')}
-                        alt='menu' />
-                    <img 
-                        className={styles.notiImg}
-                        src={require('../assets/newQuestion_notification.png')}
-                        alt='notification' />
+                    <div className={styles.topBtn}>
+                        <img 
+                            className={styles.menuImg}
+                            src={require('../assets/newQuestion_menu.png')}
+                            alt='menu' />
+                        <img 
+                            className={styles.notiImg}
+                            src={require('../assets/newQuestion_notification.png')}
+                            alt='notification' />
+                    </div>
                     <text className={styles.userName}> 
                         <img
                             className={styles.usernameImg}
@@ -29,7 +35,9 @@ class newQuestion extends Component {
                 <br/>
                 <div className={styles.createQuestion}>
                     <input className={styles.addQuestion} />
-                    <button className={styles.addBtn}>확인</button>
+                    <button 
+                        className={styles.addBtn}
+                        onClick={addQuestion()}>확인</button>
                     <img
                         className={styles.img1}
                         src={require('../assets/newQuestion_img2.png')}
