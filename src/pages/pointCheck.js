@@ -5,8 +5,10 @@ class pointCheck extends Component {
     render() {
         return (
             <div className={styles.main}> 
-            
+                <text> test </text>
             </div>
         );
     }
 }
+
+export default pointCheck;
