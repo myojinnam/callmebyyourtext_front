@@ -3,26 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { primaryColor, secondaryColor } from '../styles/GlobalStyle';
 import Logo from '../assets/images/loadingLogo.png';
+import Title from '../components/Title/Title';
 
 const Wrapper = styled.section`
 `
 
 const Img = styled.img`
   width: auto;
-`
-
-const Title = styled.p`
-  font-family: 'Noto Sans KR Black';
-  font-style: italic;
-  font-size: 1.5rem;
-  color: ${primaryColor};
-  text-align: center;
-  margin-bottom: 0;
-`;
-
-const Bold = styled.span`
-  font-family: 'Noto Sans KR Bold';
-  font-weight: 900;
 `
 
 const SubTitle = styled.p`
@@ -56,7 +43,7 @@ const Home = () => {
     <>
       <Wrapper>
         <Img src={Logo} />
-        <Title>Call me by your <Bold>TEXT</Bold></Title>
+        <Title />
         <SubTitle>나의 (<Bracket>빈칸</Bracket>), 당신의 ____</SubTitle>
       </Wrapper>
     </>
