@@ -1,0 +1,9 @@
+.input {
+  border: none;
+  border-bottom: 1px #cb7980 solid;
+  outline: none;
+}
+
+.inputWrap {
+  width: 100%;
+}
