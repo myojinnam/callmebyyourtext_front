@@ -1,14 +1,11 @@
 import React from 'react';
 import styles from './Loading.module.css';
+import Logo from '../../assets/images/loadingLogo.png';
 
 export default function Loading() {
   return (
     <div className={styles.loadingBody}>
-      <img
-        src="images/loadingLogo.png"
-        className={styles.loadingLogo}
-        alt="error"
-      />
+      <img src={Logo} className={styles.loadingLogo} alt="error" />
       <div className={styles.loadingTitleWrap}>
         <p className={styles.loadingTitle}>
           Call me by your <b>TEXT</b>

@@ -3,6 +3,8 @@ import Loading from '../../components/Loading/Loading';
 import Header from '../../components/Header/Header';
 import Button from '../../components/Button/Button';
 import styles from './LoginForComment.module.css';
+import InputId from '../../assets/images/inputId.png';
+import InputPw from '../../assets/images/inputPw.png';
 
 export default function LoginForComment({ user }) {
   //loading
@@ -40,7 +42,7 @@ export default function LoginForComment({ user }) {
         <form className={styles.form}>
           <div className={styles.inputWrap}>
             <label htmlFor="input_id">
-              <img src="" alt="" />
+              <img src={InputId} alt="" />
             </label>
             <input
               className={styles.input}
@@ -53,7 +55,7 @@ export default function LoginForComment({ user }) {
           </div>
           <div className={styles.inputWrap}>
             <label htmlFor="input_pw">
-              <img src="" alt="" />
+              <img src={InputPw} alt="" />
             </label>
             <input
               className={styles.input}
