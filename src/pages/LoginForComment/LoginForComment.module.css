@@ -1,9 +1,30 @@
-.input {
-  border: none;
-  border-bottom: 1px #cb7980 solid;
-  outline: none;
+.main {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.form {
+  width: 80%;
+  margin: 0 auto;
 }
 
 .inputWrap {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px #cb7980 solid;
+}
+
+.input {
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+}
+
+.buttonWrap {
+  margin-top: 2rem;
+  display: flex;
 }
