@@ -13,7 +13,7 @@ body {
   height: 100vh;
   overflow-y: scroll;
   margin: 0;
-  font-family: 'Noto Sans KR', sans-serif;  
+  font-family: 'Noto Sans KR Black';
   // border: 5px solid black;
 }
 
