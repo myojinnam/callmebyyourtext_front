@@ -6,9 +6,6 @@ class newQuestion extends Component {
         const username = '홍길동';
         const point = 500;
         
-        function addQuestion() {
-            <text> 질문이 생성되었습니다.</text>
-        }
 
         return (
             <div className={styles.main}>
