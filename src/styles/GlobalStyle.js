@@ -14,7 +14,7 @@ body {
   overflow-y: scroll;
   margin: 0;
   font-family: 'Noto Sans KR Black';
-  // border: 5px solid black;
+  // border: 1px solid black;
 }
 
 // @media only screen and (max-width: 359px) and (min-width:200px) {
