@@ -3,8 +3,10 @@ import { Routes, Route } from 'react-router-dom';
 import { GlobalStyle } from './styles/GlobalStyle';
 import Home from './pages/Home';
 import Question from './pages/Question';
+
 import LoginForComment from './pages/LoginForComment';
 import SignIn from './pages/SignIn';
+// import ForEnterComment from './pages/ForEnterComment';
 
 const App = () => {
   return (
@@ -17,6 +19,10 @@ const App = () => {
         <Route
           path="/loginForComment"
           element={<LoginForComment user={'홍길동'} />}
+        ></Route>
+        <Route
+          path="/forEnterComment"
+          element={<ForEnterComment user={'홍길동'} />}
         ></Route>
       </Routes>
     </>

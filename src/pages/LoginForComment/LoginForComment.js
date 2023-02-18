@@ -2,19 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Loading from '../../components/Loading/Loading';
 import Header from '../../components/Header/Header';
 import Button from '../../components/Button/Button';
-import styled from 'styled-components';
 import styles from './LoginForComment.module.css';
-
-const Main = styled.span`
-  width: 100%;
-  min-height: 80%;
-`;
-
-const Form = styled.span`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`;
 
 export default function LoginForComment({ user }) {
   //loading
@@ -26,10 +14,6 @@ export default function LoginForComment({ user }) {
   //Click Evnet Handler
   const handleGoToLogin = (e) => {
     e.preventDefault();
-  };
-  const handleGotoNext = (e) => {
-    e.preventDefault();
-    console.log('gotonext');
   };
 
   //Input Change Evnet Handler
@@ -52,8 +36,8 @@ export default function LoginForComment({ user }) {
   ) : (
     <>
       <Header user={user} />
-      <Main>
-        <Form>
+      <main className={styles.main}>
+        <form className={styles.form}>
           <div className={styles.inputWrap}>
             <label htmlFor="input_id">
               <img src="" alt="" />
@@ -67,7 +51,7 @@ export default function LoginForComment({ user }) {
               placeholder="E-mail"
             />
           </div>
-          <div>
+          <div className={styles.inputWrap}>
             <label htmlFor="input_pw">
               <img src="" alt="" />
             </label>
@@ -81,18 +65,16 @@ export default function LoginForComment({ user }) {
             />
           </div>
 
-          <Button
-            value={'로그인하기'}
-            width={'100px'}
-            onClick={handleGoToLogin}
-          />
-          <Button
-            value={'그냥접속하기'}
-            width={'100px'}
-            onClick={handleGotoNext}
-          />
-        </Form>
-      </Main>
+          <div className={styles.buttonWrap}>
+            <Button
+              value={'로그인'}
+              width={'180px'}
+              fontSize={'1.2rem'}
+              onClick={handleGoToLogin}
+            />
+          </div>
+        </form>
+      </main>
     </>
   );
 }

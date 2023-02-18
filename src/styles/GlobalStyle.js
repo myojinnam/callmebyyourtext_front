@@ -17,6 +17,11 @@ body {
   // border: 1px solid black;
 }
 
+#root{
+  width:100%;
+  height:100%;
+}
+
 // @media only screen and (max-width: 359px) and (min-width:200px) {
 //   .App {
 //     width: 375px;
