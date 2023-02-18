@@ -22,6 +22,11 @@ body {
   height:100%;
 }
 
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
 // @media only screen and (max-width: 359px) and (min-width:200px) {
 //   .App {
 //     width: 375px;

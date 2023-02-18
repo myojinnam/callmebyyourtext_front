@@ -3,10 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 import { GlobalStyle } from './styles/GlobalStyle';
 import Home from './pages/Home';
 import Question from './pages/Question';
-
-import LoginForComment from './pages/LoginForComment';
 import SignIn from './pages/SignIn';
-// import ForEnterComment from './pages/ForEnterComment';
+import ForEnterComment from './pages/ForEnterComment';
+import LoginForComment from './pages/LoginForComment/LoginForComment';
 
 const App = () => {
   return (

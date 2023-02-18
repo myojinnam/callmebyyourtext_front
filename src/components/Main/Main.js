@@ -11,7 +11,11 @@ export default function Main({ name }) {
   const [confirmComment, setConfirmComment] = useState(false);
   const toggleAddComment = () => {
     setAddComment(!addComment);
-    setButtonText(addComment ? '댓글달기' : '돌아가기');
+    setButtonText(addComment ? '답변등록' : '돌아가기');
+  };
+
+  const handleInputComment = () => {
+    return;
   };
   const handleConfirm = () => {
     setConfirmComment(!confirmComment);
@@ -19,21 +23,34 @@ export default function Main({ name }) {
   const handleModal = (modal) => {
     {
       modal && setConfirmComment(!confirmComment);
+      //modal 처리
     }
   };
   return (
     <main className={styles.main}>
-      <b>{name}</b>님이 올린 질문입니다.
-      <Question value={'나와 닮은 동물은?'} />
-      {addComment && <InputComment />}
+      <span className={styles.mainTitle}>
+        <b>{name}</b>님이 올린 질문입니다.
+      </span>
+      <ul>
+        <li>
+          <Question value={'나와 닮은 동물은?'} />
+        </li>
+      </ul>
+      {addComment && <InputComment onChange={handleInputComment} />}
       <div className={addComment ? styles.buttonWrapWide : styles.buttonWrap}>
         <Button
           value={buttonText}
           onClick={toggleAddComment}
           width={addComment ? '100px' : '150px'}
+          background={'#F8ECEC'}
         />
         {addComment && (
-          <Button value={'확인'} onClick={handleConfirm} width={'100px'} />
+          <Button
+            value={'답변등록'}
+            onClick={handleConfirm}
+            width={'100px'}
+            background={'#F8ECEC'}
+          />
         )}
       </div>
       {confirmComment && (
