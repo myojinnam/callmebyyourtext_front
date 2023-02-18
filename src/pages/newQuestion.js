@@ -3,7 +3,8 @@ import styles from '../styles/newQuestion.module.css';
 
 class newQuestion extends Component {
     render() {
-        // const { username };
+        const username = '홍길동';
+        const point = 500;
 
         return (
             <div className={styles.main}>
@@ -21,11 +22,13 @@ class newQuestion extends Component {
                             className={styles.usernameImg}
                             src={require('../assets/newQuestion_img3.png')}
                             alt='img' />
-                        홍길동 
+                        {username} 
                     </text> 
+                    <text className={styles.pointFont}>포인트 : {point}</text>
                 </div>
+                <br/>
                 <div className={styles.createQuestion}>
-                    <input className={styles.addQuestion}/>
+                    <input className={styles.addQuestion} />
                     <button className={styles.addBtn}>확인</button>
                     <img
                         className={styles.img1}

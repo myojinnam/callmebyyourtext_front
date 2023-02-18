@@ -11,7 +11,7 @@
     background-color: #FFFFFF;
     opacity: 63%;
     padding-top: 55px;
-    padding-bottom: 70px;
+    padding-bottom: 60px;
     display: flex;
     flex-direction: column;
 }
@@ -26,9 +26,9 @@
 
 /* 알림창 버튼 */
 .notiImg {
-    float:right;
-    width: 60px;
-    height: 40px;
+    float: right;
+    width: 80px;
+    height: 80px;
 }
 
 /* 유저명 옆 꽃 이미지 */
@@ -45,7 +45,11 @@
     border-bottom: 3px solid #CB7980;
     margin-left: 20px;
     width: 300px;
+}
 
+/* 포인트 */
+.pointFont {
+    margin-top: 5px;
 }
 
 /* 하단 질문 부분 */
@@ -54,7 +58,6 @@
     flex-direction: column;
     -webkit-box-align: center;
     align-items: center;
-    margin-top: 70px;
 }
 
 /* 생성할 질문 입력란 */
