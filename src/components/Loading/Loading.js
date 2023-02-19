@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './Loading.module.css';
-import Logo from '../../assets/images/loadingLogo.png';
+import React from "react";
+import styles from "./Loading.module.css";
+import Logo from "../../assets/images/loadingLogo.png";
 
 export default function Loading() {
   return (

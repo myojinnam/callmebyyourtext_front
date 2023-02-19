@@ -1,5 +1,5 @@
-import React from 'react';
-import Title from '../components/Title/Title';
+import React from "react";
+import Title from "../components/Title/Title";
 import {
   TextField,
   FormControl,
@@ -8,20 +8,22 @@ import {
   Typography,
   Container,
 } from "@mui/material/";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const SignIn = () => {
   return (
     <>
       <Title />
-      <Box sx={{
-        component: "form",
-        marginTop: 5,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        minHeight: "70vh",
-      }}>
+      <Box
+        sx={{
+          component: "form",
+          marginTop: 5,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          minHeight: "70vh",
+        }}
+      >
         <TextField
           autoFocus
           required

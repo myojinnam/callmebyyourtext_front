@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import Loading from '../../components/Loading/Loading';
-import Header from '../../components/Header/Header';
-import Button from '../../components/Button/Button';
-import styles from './LoginForComment.module.css';
-import InputId from '../../assets/images/inputId.png';
-import InputPw from '../../assets/images/inputPw.png';
+import React, { useEffect, useState } from "react";
+import Loading from "../../components/Loading/Loading";
+import Header from "../../components/Header/Header";
+import Button from "../../components/Button/Button";
+import styles from "./LoginForComment.module.css";
+import InputId from "../../assets/images/inputId.png";
+import InputPw from "../../assets/images/inputPw.png";
 
 export default function LoginForComment({ user }) {
   //loading
   const [ready, setReady] = useState(false);
   //login
-  const [inputId, setInputId] = useState('');
-  const [inputPw, setInputPw] = useState('');
+  const [inputId, setInputId] = useState("");
+  const [inputPw, setInputPw] = useState("");
 
   //Click Evnet Handler
   const handleGoToLogin = (e) => {
@@ -46,7 +46,7 @@ export default function LoginForComment({ user }) {
             </label>
             <input
               className={styles.input}
-              type={'text'}
+              type={"text"}
               name="input_id"
               value={inputId}
               onChange={handleInputId}
@@ -59,7 +59,7 @@ export default function LoginForComment({ user }) {
             </label>
             <input
               className={styles.input}
-              type={'password'}
+              type={"password"}
               name="input_pw"
               value={inputPw}
               onChange={handleInputPw}
@@ -69,9 +69,9 @@ export default function LoginForComment({ user }) {
 
           <div className={styles.buttonWrap}>
             <Button
-              value={'로그인'}
-              width={'180px'}
-              fontSize={'1.2rem'}
+              value={"로그인"}
+              width={"180px"}
+              fontSize={"1.2rem"}
               onClick={handleGoToLogin}
             />
           </div>
