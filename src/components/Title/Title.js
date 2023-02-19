@@ -7,7 +7,6 @@ const TitleText = styled.p`
   font-style: italic;
   font-size: 1.5rem;
   color: ${primaryColor};
-  text-align: center;
   margin-bottom: 0;
 `;
 
