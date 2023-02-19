@@ -5,7 +5,9 @@ import { primaryColor, secondaryColor } from "../styles/GlobalStyle";
 import Logo from "../assets/images/loadingLogo.png";
 import Title from "../components/Title/Title";
 
-const Wrapper = styled.section``;
+const Wrapper = styled.section`
+  text-align: center;
+`;
 
 const Img = styled.img`
   width: auto;
@@ -16,7 +18,6 @@ const SubTitle = styled.p`
   font-size: 0.8rem;
   font-weight: 900;
   color: ${secondaryColor};
-  text-align: center;
 `;
 
 const Bracket = styled.span`
@@ -41,7 +42,7 @@ const Home = () => {
   return (
     <>
       <Wrapper>
-        <Img src={Logo} />
+        <Img src={Logo} alt="error" />
         <Title />
         <SubTitle>
           나의 (<Bracket>빈칸</Bracket>), 당신의 ____

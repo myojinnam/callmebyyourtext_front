@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { primaryColor } from "../styles/GlobalStyle";
 import { useNavigate } from "react-router-dom";
+import PrimaryBtn from "../components/Button/PrimaryBtn";
 
 const LogIn = styled.p`
   font-size: 14px;
@@ -27,19 +28,6 @@ const QuestionBox = styled.section`
   margin-bottom: 30%;
 `;
 
-const Button = styled.button`
-  width: 200px;
-  height: 35px;
-  border: 1px solid ${primaryColor};
-  color: ${primaryColor};
-  background-color: white;
-  &:hover {
-    color: white;
-    background-color: ${primaryColor};
-    cursor: pointer;
-  }
-`;
-
 const Question = () => {
   const navigate = useNavigate();
   const signIn = () => {
@@ -51,7 +39,7 @@ const Question = () => {
       <Wrapper>
         <Header>홍길동님의 질문입니다.</Header>
         <QuestionBox>저의 첫인상은 어땠나요?</QuestionBox>
-        <Button>답변 등록</Button>
+        <PrimaryBtn btnName={"답변 등록"}></PrimaryBtn>
       </Wrapper>
     </>
   );

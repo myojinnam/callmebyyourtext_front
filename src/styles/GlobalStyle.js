@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
 body {
   display: flex;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
@@ -17,10 +17,12 @@ body {
   // border: 1px solid black;
 }
 
-#root{
-  width:100%;
-  height:100%;
-}
+// 본인 파트 확인하시고 필요한 섹션에만 적용하시는 게 좋을 것 같아요
+// 해결되셨으면 주석은 지워주세요
+// #root{
+//   width:100%;
+//   height:100%;
+// }
 
 ul {
   list-style: none;
