@@ -1,0 +1,23 @@
+.header {
+  width: 100%;
+  background-color: white;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleWrap {
+  border-bottom: #cb7980 2px solid;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.titleLogo {
+  width: 30px;
+  height: 30px;
+}
+
+.titleName {
+  font-size: 2rem;
+}
