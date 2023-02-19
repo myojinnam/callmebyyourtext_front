@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import styles from './Main.module.css';
-import Question from './../Question/Question';
-import Button from '../Button/Button';
-import InputComment from '../InputComment/InputComment';
-import Modal from './../Modal/Modal';
+import React, { useState } from "react";
+import styles from "./Main.module.css";
+import Question from "./../Question/Question";
+import Button from "../Button/Button";
+import InputComment from "../InputComment/InputComment";
+import Modal from "./../Modal/Modal";
 
 export default function Main({ name }) {
   const [addComment, setAddComment] = useState(false);
-  const [buttonText, setButtonText] = useState('댓글달기');
+  const [buttonText, setButtonText] = useState("댓글달기");
   const [confirmComment, setConfirmComment] = useState(false);
   const toggleAddComment = () => {
     setAddComment(!addComment);
-    setButtonText(addComment ? '답변등록' : '돌아가기');
+    setButtonText(addComment ? "답변등록" : "돌아가기");
   };
 
   const handleInputComment = () => {
@@ -33,7 +33,7 @@ export default function Main({ name }) {
       </span>
       <ul>
         <li>
-          <Question value={'나와 닮은 동물은?'} />
+          <Question value={"나와 닮은 동물은?"} />
         </li>
       </ul>
       {addComment && <InputComment onChange={handleInputComment} />}
@@ -41,15 +41,15 @@ export default function Main({ name }) {
         <Button
           value={buttonText}
           onClick={toggleAddComment}
-          width={addComment ? '100px' : '150px'}
-          background={'#F8ECEC'}
+          width={addComment ? "100px" : "150px"}
+          background={"#F8ECEC"}
         />
         {addComment && (
           <Button
-            value={'답변등록'}
+            value={"답변등록"}
             onClick={handleConfirm}
-            width={'100px'}
-            background={'#F8ECEC'}
+            width={"100px"}
+            background={"#F8ECEC"}
           />
         )}
       </div>

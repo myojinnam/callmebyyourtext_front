@@ -1,105 +1,105 @@
 .main {
-    background-color: #FFFDF6;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
+  background-color: #fffdf6;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
 }
 
 /* 상단 부분 */
 .top {
-    background-color: #FFFFFF;
-    opacity: 63%;
-    padding-top: 50px;
-    padding-bottom: 40px;
-    display: flex;
-    flex-direction: column;
+  background-color: #ffffff;
+  opacity: 63%;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* 메뉴, 옵션 버튼 */
 .topBtn {
-    float: right;
+  float: right;
 }
 
 /* 메뉴 버튼 */
 .menuImg {
-    float: right;
-    margin-right: 20px;
+  float: right;
+  margin-right: 20px;
 }
 
 /* 알림창 버튼 */
 .notiImg {
-    float: right;
-    margin-top: 20px;
-    margin-right: -45px;
+  float: right;
+  margin-top: 20px;
+  margin-right: -45px;
 }
 
 /* 유저명 옆 꽃 이미지 */
 .usernameImg {
-    width: 22px;
-    height: 24px;
-    padding-right: 50px;
+  width: 22px;
+  height: 24px;
+  padding-right: 50px;
 }
 
 /* 유저명 + 밑줄 */
 .userName {
-    color: #613B3E;
-    font-size: 25px;
-    border-bottom: 3px solid #CB7980;
-    margin-left: 20px;
-    width: 300px;
+  color: #613b3e;
+  font-size: 25px;
+  border-bottom: 3px solid #cb7980;
+  margin-left: 20px;
+  width: 300px;
 }
 
 /* 포인트 */
 .pointFont {
-    margin-top: 5px;
-    margin-left: 230px;
+  margin-top: 5px;
+  margin-left: 230px;
 }
 
 /* 하단 질문 부분 */
 .createQuestion {
-    display: flex;
-    flex-direction: column;
-    -webkit-box-align: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
 }
 
 /* 생성할 질문 입력란 */
 .addQuestion {
-    font-size: 15px;
-    width: 313px;
-    height: 230px;
-    background-color: #FFFFFF;
-    margin-top: 40px;
-    padding-left: 10px;
-    border: 0px;
-    border-radius: 13px;
-    box-shadow: 0px 2px 3px gray;
-    z-index: 1;
+  font-size: 15px;
+  width: 313px;
+  height: 230px;
+  background-color: #ffffff;
+  margin-top: 40px;
+  padding-left: 10px;
+  border: 0px;
+  border-radius: 13px;
+  box-shadow: 0px 2px 3px gray;
+  z-index: 1;
 }
 
 /* 질문 생성 버튼 */
 .addBtn {
-    width: 208px;
-    height: 39px;
-    font-size: 17px;
-    color: #D07C81;
-    background-color: unset;
-    border: 1px solid #D07C81;
-    border-radius: 5px;
-    margin-top: 25px;
-    box-shadow: 0px 3px 4px gray;
-    z-index: 1;
+  width: 208px;
+  height: 39px;
+  font-size: 17px;
+  color: #d07c81;
+  background-color: unset;
+  border: 1px solid #d07c81;
+  border-radius: 5px;
+  margin-top: 25px;
+  box-shadow: 0px 3px 4px gray;
+  z-index: 1;
 }
 
 /* 뒷배경 꽃1 */
 .img1 {
-    margin-top: -265px;
-    margin-left: auto;
-    z-index: 0;
+  margin-top: -265px;
+  margin-left: auto;
+  z-index: 0;
 }
 /* 뒷배경 꽃2 */
 .img2 {
-    margin-right: auto;
-    margin-bottom: auto;
+  margin-right: auto;
+  margin-bottom: auto;
 }

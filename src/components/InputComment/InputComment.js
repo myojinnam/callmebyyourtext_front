@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import styles from './InputComment.module.css';
+import React, { useState } from "react";
+import styles from "./InputComment.module.css";
 
 export default function InputComment({ onChange }) {
-  const [inputText, setInputText] = useState('');
+  const [inputText, setInputText] = useState("");
   const handleChange = (e) => {
     setInputText(e.target.value);
     console.log(inputText);

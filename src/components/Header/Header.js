@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './Header.module.css';
-import titleLogo from '../../assets/images/titleLogo.png';
+import React from "react";
+import styles from "./Header.module.css";
+import titleLogo from "../../assets/images/titleLogo.png";
 
 export default function Header({ user }) {
   return (
