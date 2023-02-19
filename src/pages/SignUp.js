@@ -46,7 +46,6 @@ const SignUp = () => {
             label="이메일"
           />
           <TextField
-            autoFocus
             required
             fullWidth
             variant="standard"

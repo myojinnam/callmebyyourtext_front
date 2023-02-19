@@ -10,6 +10,10 @@ const Wrapper = styled.section`
   text-align: center;
 `;
 
+const btnWrapper = styled.section`
+  text-align: center;
+`;
+
 const SignIn = () => {
   const navigate = useNavigate();
   const handlePage = () => {
@@ -25,7 +29,7 @@ const SignIn = () => {
             flexDirection: "column",
             component: "form",
             marginTop: 5,
-            marginBottom: 3,
+            marginBottom: 2,
           }}
         >
           <TextField
@@ -55,11 +59,15 @@ const SignIn = () => {
               textAlign: "right",
               cursor: "pointer",
               marginTop: 1,
+              marginBottom: 3,
             }}
             onClick={handlePage}
           >
             회원가입
           </Typography>
+          <btnWrapper>
+            <PrimaryBtn btnName={"Login"}></PrimaryBtn>
+          </btnWrapper>
         </Box>
         <PrimaryBtn btnName={"Google"}></PrimaryBtn>
       </Wrapper>
