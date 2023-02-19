@@ -5,6 +5,7 @@ import Notification from "../../assets/images/notification.png";
 import InputImage from "../../assets/images/titleLogo.png";
 import Background1 from "../../assets/images/newQuestion_img1.png";
 import Background2 from "../../assets/images/newQuestion_img2.png";
+import PrimaryBtn from "../../components/Button/PrimaryBtn";
 
 class newQuestion extends Component {
   render() {
@@ -29,9 +30,9 @@ class newQuestion extends Component {
         <div className={styles.createQuestion}>
           <input
             className={styles.addQuestion}
-            placeholder="새로운 질문을 입력해주세요."
-          />
-          <button className={styles.addBtn}>확인</button>
+            placeholder="새로운 질문을 입력해주세요." />
+          <br/>
+          <PrimaryBtn btnName={"확인"}> </PrimaryBtn>
           <img className={styles.img1} src={Background1} alt="error" />
           <img className={styles.img2} src={Background2} alt="error" />
         </div>
