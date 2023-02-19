@@ -17,12 +17,8 @@ const Button = styled.button`
   }
 `;
 
-const PrimaryBtn = ({ btnName }) => {
-  return (
-    <>
-      <Button>{btnName}</Button>
-    </>
-  );
+const PrimaryBtn = ({ btnName, onClick }) => {
+  return <Button onClick={onClick}>{btnName}</Button>;
 };
 
 export default PrimaryBtn;
