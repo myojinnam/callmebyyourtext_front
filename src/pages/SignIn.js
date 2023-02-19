@@ -10,7 +10,7 @@ const Wrapper = styled.section`
   text-align: center;
 `;
 
-const btnWrapper = styled.section`
+const BtnWrapper = styled.section`
   text-align: center;
 `;
 
@@ -65,9 +65,9 @@ const SignIn = () => {
           >
             회원가입
           </Typography>
-          <btnWrapper>
+          <BtnWrapper>
             <PrimaryBtn btnName={"Login"}></PrimaryBtn>
-          </btnWrapper>
+          </BtnWrapper>
         </Box>
         <PrimaryBtn btnName={"Google"}></PrimaryBtn>
       </Wrapper>
