@@ -10,6 +10,10 @@ const Wrapper = styled.section`
   text-align: center;
 `;
 
+const BtnWrapper = styled.section`
+  margin-top: 10%;
+`;
+
 // FormHelper--------------------------------------------------------------------------
 const FormHelperEmails = styled(FormHelperText)`
   width: 100%;
@@ -81,10 +85,10 @@ const SignUp = () => {
     const nameCurrent = e.target.value;
     setName(nameCurrent);
     if (!nameRegex.test(nameCurrent)) {
-      setNameMessage("한글 또는 영문자만 가능합니다.[1~10글자]");
+      setNameMessage("한글 또는 영문자만 가능[1~10글자]");
       setIsName(false);
     } else {
-      setNameMessage("올바른 이름 형식입니다");
+      setNameMessage("올바른 이름 형식");
       setIsName(true);
     }
   }, []);
@@ -100,7 +104,7 @@ const SignUp = () => {
       setPassword1Message("숫자+영문자+특수문자 조합 8자리 이상 입력");
       setIsPassword1(false);
     } else {
-      setPassword1Message("안전한 비밀번호입니다");
+      setPassword1Message("비밀번호 보안 높음");
       setIsPassword1(true);
     }
   }, []);
@@ -112,10 +116,10 @@ const SignUp = () => {
       setPassword2(password2Current);
 
       if (password1 === password2Current) {
-        setPassword2Message("비밀번호를 똑같이 입력했어요");
+        setPassword2Message("비밀번호 입력 일치");
         setIsPassword2(true);
       } else {
-        setPassword2Message("비밀번호가 틀렸습니다. 다시 확인하세요");
+        setPassword2Message("비밀번호가 입력 불일치");
         setIsPassword2(false);
       }
     },
@@ -164,7 +168,6 @@ const SignUp = () => {
             alignItems: "center",
             component: "form",
             marginTop: 3,
-            marginBottom: 3,
           }}
         >
           <TextField
@@ -177,7 +180,7 @@ const SignUp = () => {
             name="email"
             label="이메일"
             onChange={onChangeEmail}
-            error={email !== "" && isName}
+            error={email !== "" && !isEmail}
           />
           <FormHelperEmails isemail={isEmail ? "true" : "false"}>
             {emailMessage}
@@ -190,6 +193,7 @@ const SignUp = () => {
             id="name"
             name="name"
             label="이름"
+            sx={{ marginTop: 2 }}
             onChange={onChangeName}
             error={name !== "" && !isName}
           />
@@ -204,6 +208,7 @@ const SignUp = () => {
             id="password"
             name="password"
             label="비밀번호 (숫자+영문자+특수문자 8자리 이상)"
+            sx={{ marginTop: 2 }}
             onChange={onChangePassword1}
             error={password1 !== "" && !isPassword1}
           />
@@ -218,14 +223,16 @@ const SignUp = () => {
             id="password2"
             name="password2"
             label="비밀번호 확인"
-            sx={{ marginBottom: 3 }}
+            sx={{ marginTop: 2 }}
             onChange={onChangePassword2}
             error={password2 !== "" && !isPassword2}
           />
           <FormHelperPWCF ispassword2={isPassword2 ? "true" : "false"}>
             {password2Message}
           </FormHelperPWCF>
-          <PrimaryBtn btnName={"등록"} onClick={onSubmit}></PrimaryBtn>
+          <BtnWrapper>
+            <PrimaryBtn btnName={"등록"} onClick={onSubmit}></PrimaryBtn>
+          </BtnWrapper>
         </Box>
       </Wrapper>
     </>
