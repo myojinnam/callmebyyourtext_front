@@ -8,6 +8,7 @@ import ForEnterComment from "./pages/ForEnterComment";
 import LoginForComment from "./pages/LoginForComment/LoginForComment";
 import NewQuestion from "./components/NewQuestion/NewQuestion";
 import PointCheck from "./components/PointCheck/PointCheck";
+import SignUp from "./pages/SignUp";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/" element={<Home />}></Route>
         <Route path="/question" element={<Question />}></Route>
         <Route path="/signin" element={<SignIn />}></Route>
+        <Route path="/signup" element={<SignUp />}></Route>
         <Route
           path="/loginForComment"
           element={<LoginForComment user={"홍길동"} />}
