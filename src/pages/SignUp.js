@@ -16,8 +16,20 @@ const Wrapper = styled.section`
   text-align: center;
 `;
 
-const BtnWrapper = styled.section`
+const SubmitBtn = styled.button`
   margin-top: 10%;
+  width: 200px;
+  height: 35px;
+  border: 1px solid ${primaryColor};
+  color: ${primaryColor};
+  background-color: white;
+  border-radius: 5px;
+  transition: 0.3s;
+  &:hover {
+    color: white;
+    background-color: ${primaryColor};
+    cursor: pointer;
+  }
 `;
 
 // FormHelper--------------------------------------------------------------------------
@@ -135,14 +147,14 @@ const SignUp = () => {
   // Submit 실행-------------------------------------------------------------------------------
   const onSubmit = (e) => {
     e.preventDefault();
-    const data = new FormData(e.currentTarget[0]);
+    const data = new FormData(e.currentTarget);
     const joinData = {
       email: data.get("email"),
       name: data.get("name"),
       password1: data.get("password1"),
       password2: data.get("password2"),
     };
-    console.log(data);
+    console.log(joinData);
     // await axios
     //   .post("http://127.0.0.1:8000/login/signup/", joinData)
     //   .then((response) => {
@@ -169,15 +181,16 @@ const SignUp = () => {
           회원가입
         </Typography>
         <Box
+          component="form"
+          onSubmit={onSubmit}
           sx={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            component: "form",
             marginTop: 3,
           }}
         >
-          <FormControl component="fieldset" variant="standard">
+          <FormControl component="fieldset">
             <TextField
               autoFocus
               required
@@ -242,14 +255,7 @@ const SignUp = () => {
             <FormHelperPWCF ispassword2={isPassword2 ? "true" : "false"}>
               {password2Message}
             </FormHelperPWCF>
-            <BtnWrapper>
-              <PrimaryBtn
-                type="submit"
-                btnName={"등록"}
-                onClick={onSubmit}
-                // disabled={!(isEmail && isName && isPassword1 && isPassword2)}
-              ></PrimaryBtn>
-            </BtnWrapper>
+            <SubmitBtn>등록</SubmitBtn>
           </FormControl>
         </Box>
       </Wrapper>
