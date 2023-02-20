@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { primaryColor } from "../styles/GlobalStyle";
 import { useNavigate } from "react-router-dom";
 import PrimaryBtn from "../components/Button/PrimaryBtn";
+import Menu from "../assets/images/menu.png";
+import { AuthContext } from "../context/AuthContext";
+
+const Auth = JSON.parse(localStorage.getItem("auth"));
 
 const LogIn = styled.p`
   font-size: 14px;
@@ -11,7 +15,15 @@ const LogIn = styled.p`
   right: 13px;
   color: ${primaryColor};
   cursor: pointer;
+  display: ${Auth ? "none" : "inline-block"};
 `;
+
+const LogOut = styled.img`
+  postion: absolute;
+  top: 5px;
+  right: 13px;
+`;
+
 const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
@@ -29,16 +41,30 @@ const QuestionBox = styled.section`
 `;
 
 const Question = () => {
+  const { setIsLoggedIn } = useContext(AuthContext);
+
   const navigate = useNavigate();
-  const signIn = () => {
+  const goToSignIn = () => {
     navigate("/signin");
+  };
+  const logOut = () => {
+    if (window.confirm("정말 로그아웃하시겠습니까?")) {
+      setIsLoggedIn(false);
+      localStorage.clear();
+      alert("로그아웃되었습니다.");
+      // navigate("/", { replace: true });
+      window.location.replace("/");
+    } else {
+      return;
+    }
   };
   return (
     <>
-      <LogIn onClick={signIn}>로그인</LogIn>
+      <LogIn onClick={goToSignIn}>로그인</LogIn>
+      <LogOut src={Menu} onClick={logOut} />
       <Wrapper>
-        <Header>홍길동님의 질문입니다.</Header>
-        <QuestionBox>저의 첫인상은 어땠나요?</QuestionBox>
+        <Header>***님의 질문입니다.</Header>
+        <QuestionBox>질문란</QuestionBox>
         <PrimaryBtn btnName={"답변 등록"}></PrimaryBtn>
       </Wrapper>
     </>
