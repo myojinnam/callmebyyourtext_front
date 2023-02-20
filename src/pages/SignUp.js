@@ -133,25 +133,24 @@ const SignUp = () => {
   );
 
   // Submit 실행-------------------------------------------------------------------------------
-  const onSubmit = async (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
-    alert("미완성");
-    const data = new FormData();
+    const data = new FormData(e.currentTarget[0]);
     const joinData = {
       email: data.get("email"),
       name: data.get("name"),
       password1: data.get("password1"),
       password2: data.get("password2"),
     };
-    console.log(joinData);
-    await axios
-      .post("http://127.0.0.1:8000/login/signup/", joinData)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    console.log(data);
+    // await axios
+    //   .post("http://127.0.0.1:8000/login/signup/", joinData)
+    //   .then((response) => {
+    //     console.log(response);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   };
 
   return (
@@ -178,7 +177,7 @@ const SignUp = () => {
             marginTop: 3,
           }}
         >
-          <FormControl component="fieldset">
+          <FormControl component="fieldset" variant="standard">
             <TextField
               autoFocus
               required
@@ -232,6 +231,7 @@ const SignUp = () => {
               fullWidth
               variant="standard"
               color="secondary"
+              type="password"
               id="password2"
               name="password2"
               label="비밀번호 확인"
@@ -244,9 +244,10 @@ const SignUp = () => {
             </FormHelperPWCF>
             <BtnWrapper>
               <PrimaryBtn
+                type="submit"
                 btnName={"등록"}
                 onClick={onSubmit}
-                disabled={!(isEmail && isName && isPassword1 && isPassword2)}
+                // disabled={!(isEmail && isName && isPassword1 && isPassword2)}
               ></PrimaryBtn>
             </BtnWrapper>
           </FormControl>
