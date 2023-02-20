@@ -40,7 +40,7 @@ const FormHelperPWs = styled(FormHelperText)`
   margin-left: 0 !important;
   font-weight: 700 !important;
   color: ${(props) =>
-    props.ispassword1 === "true" ? "#71c4eb" : `${primaryColor}`} !important;
+    props.ispassword === "true" ? "#71c4eb" : `${primaryColor}`} !important;
 `;
 const FormHelperPWCF = styled(FormHelperText)`
   width: 100%;
@@ -54,19 +54,19 @@ const SignUp = () => {
   // Input Component---------------------------------------------------------------------------
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [password1, setPassword1] = useState("");
+  const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
 
   // ErrorMessage State------------------------------------------------------------------------
   const [nameMessage, setNameMessage] = useState("");
   const [emailMessage, setEmailMessage] = useState("");
-  const [password1Message, setPassword1Message] = useState("");
+  const [passwordMessage, setPasswordMessage] = useState("");
   const [password2Message, setPassword2Message] = useState("");
 
   // Validation State
   const [isName, setIsName] = useState(false);
   const [isEmail, setIsEmail] = useState(false);
-  const [isPassword1, setIsPassword1] = useState(false);
+  const [isPassword, setIsPassword] = useState(false);
   const [isPassword2, setIsPassword2] = useState(false);
 
   // Email 유효성 관리
@@ -101,17 +101,17 @@ const SignUp = () => {
 
   // 비밀번호 유효성 관리
   const onChangePassword1 = useCallback((e) => {
-    const password1Regex =
+    const passwordRegex =
       /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/;
-    const password1Current = e.target.value;
-    setPassword1(password1Current);
+    const passwordCurrent = e.target.value;
+    setPassword(passwordCurrent);
 
-    if (!password1Regex.test(password1Current)) {
-      setPassword1Message("숫자+영문자+특수문자 조합 8자리↑");
-      setIsPassword1(false);
+    if (!passwordRegex.test(passwordCurrent)) {
+      setPasswordMessage("숫자+영문자+특수문자 조합 8자리↑");
+      setIsPassword(false);
     } else {
-      setPassword1Message("비밀번호 보안 높음");
-      setIsPassword1(true);
+      setPasswordMessage("비밀번호 보안 높음");
+      setIsPassword(true);
     }
   }, []);
 
@@ -121,7 +121,7 @@ const SignUp = () => {
       const password2Current = e.target.value;
       setPassword2(password2Current);
 
-      if (password1 === password2Current) {
+      if (password === password2Current) {
         setPassword2Message("비밀번호 입력 일치");
         setIsPassword2(true);
       } else {
@@ -129,28 +129,27 @@ const SignUp = () => {
         setIsPassword2(false);
       }
     },
-    [password1]
+    [password]
   );
 
   // Submit 실행-------------------------------------------------------------------------------
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     const joinData = {
       email: data.get("email"),
       name: data.get("name"),
-      password1: data.get("password1"),
+      password: data.get("password"),
       password2: data.get("password2"),
     };
-    console.log(joinData);
-    // await axios
-    //   .post("http://127.0.0.1:8000/login/signup/", joinData)
-    //   .then((response) => {
-    //     console.log(response);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    await axios
+      .post("http://127.0.0.1:8000/login/signup/", joinData)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -217,15 +216,15 @@ const SignUp = () => {
               variant="standard"
               color="secondary"
               type="password"
-              id="password1"
-              name="password1"
+              id="password"
+              name="password"
               label="비밀번호 (숫자+영문자+특수문자 8자리 이상)"
               sx={{ marginTop: 2 }}
               onChange={onChangePassword1}
-              error={password1 !== "" && !isPassword1}
+              error={password !== "" && !isPassword}
             />
-            <FormHelperPWs ispassword1={isPassword1 ? "true" : "false"}>
-              {password1Message}
+            <FormHelperPWs ispassword={isPassword ? "true" : "false"}>
+              {passwordMessage}
             </FormHelperPWs>
             <TextField
               required
