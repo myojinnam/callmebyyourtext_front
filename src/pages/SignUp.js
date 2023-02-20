@@ -148,9 +148,13 @@ const SignUp = () => {
       .post("http://127.0.0.1:8000/login/signup/", joinData)
       .then((response) => {
         console.log(response);
+        alert("회원가입되었습니다. 로그인 후 이용해주세요.");
         navigate("/signin", { replace: true });
       })
       .catch((error) => {
+        if (error.request.status === 400) {
+          alert("이미 가입된 이메일입니다. 다른 이메일로 시도해주세요.");
+        }
         console.log(error);
       });
   };
