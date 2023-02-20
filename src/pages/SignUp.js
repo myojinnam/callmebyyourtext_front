@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Title from "../components/Title/Title";
 import {
   TextField,
@@ -51,6 +52,7 @@ const FormHelperPWCF = styled(FormHelperText)`
 `;
 
 const SignUp = () => {
+  const navigate = useNavigate();
   // Input Component---------------------------------------------------------------------------
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -146,6 +148,7 @@ const SignUp = () => {
       .post("http://127.0.0.1:8000/login/signup/", joinData)
       .then((response) => {
         console.log(response);
+        navigate("/signin", { replace: true });
       })
       .catch((error) => {
         console.log(error);
