@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Title from "../components/Title/Title";
 import { TextField, Box, Typography } from "@mui/material/";
 import styled from "styled-components";
@@ -6,6 +6,7 @@ import PrimaryBtn from "../components/Button/PrimaryBtn";
 import { secondaryColor } from "../styles/GlobalStyle";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { AuthContext } from "../context/AuthContext";
 
 const Wrapper = styled.section`
   text-align: center;
@@ -16,8 +17,16 @@ const BtnWrapper = styled.section`
 `;
 
 const SignIn = () => {
+  // State-------------------------------------------------------------------
   const navigate = useNavigate();
-  // const { isLoggedIn, setIsLoggedIn }
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/home", { replace: true });
+    }
+  }, [isLoggedIn]);
+
+  // Input 관리--------------------------------------------------------------
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -39,18 +48,18 @@ const SignIn = () => {
     await axios
       .post("http://127.0.0.1:8000/login/login/", user)
       .then((response) => {
-        console.log(response);
-        localStorage.setItem("token", response.data.token); // token 저장
+        setIsLoggedIn(true);
+        localStorage.setItem("auth", true);
+        localStorage.setItem("token", response.data.token);
         navigate("/question", { replace: true });
       })
       .catch((error) => {
-        console.log(error);
         if (error.response.status === 400) {
           alert("잘못된 정보입니다. 다시 시도해주세요.");
         }
       });
   };
-  const handlePage = () => {
+  const goToSignUp = () => {
     navigate("/signup");
   };
   return (
@@ -100,7 +109,7 @@ const SignIn = () => {
               marginTop: 1,
               marginBottom: 3,
             }}
-            onClick={handlePage}
+            onClick={goToSignUp}
           >
             회원가입
           </Typography>
