@@ -42,6 +42,7 @@ const QuestionBox = styled.section`
 
 const Question = () => {
   const { setIsLoggedIn } = useContext(AuthContext);
+
   const navigate = useNavigate();
   const goToSignIn = () => {
     navigate("/signin");

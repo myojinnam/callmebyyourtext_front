@@ -12,6 +12,10 @@ const Wrapper = styled.section`
   text-align: center;
 `;
 
+const SignUpText = styled.span`
+  cursor: pointer;
+`;
+
 const BtnWrapper = styled.section`
   text-align: center;
 `;
@@ -106,13 +110,11 @@ const SignIn = () => {
             sx={{
               fontSize: "12px",
               textAlign: "right",
-              cursor: "pointer",
               marginTop: 1,
               marginBottom: 3,
             }}
-            onClick={goToSignUp}
           >
-            회원가입
+            <SignUpText onClick={goToSignUp}>회원가입</SignUpText>
           </Typography>
           <BtnWrapper>
             <PrimaryBtn btnName={"Login"}></PrimaryBtn>
