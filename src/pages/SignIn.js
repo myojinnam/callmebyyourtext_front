@@ -40,9 +40,14 @@ const SignIn = () => {
       .post("http://127.0.0.1:8000/login/login/", user)
       .then((response) => {
         console.log(response);
+        localStorage.setItem("token", response.data.token); // token 저장
+        navigate("/question", { replace: true });
       })
       .catch((error) => {
         console.log(error);
+        if (error.response.status === 400) {
+          alert("잘못된 정보입니다. 다시 시도해주세요.");
+        }
       });
   };
   const handlePage = () => {
