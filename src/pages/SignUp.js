@@ -16,20 +16,8 @@ const Wrapper = styled.section`
   text-align: center;
 `;
 
-const SubmitBtn = styled.button`
+const BtnWrapper = styled.section`
   margin-top: 10%;
-  width: 200px;
-  height: 35px;
-  border: 1px solid ${primaryColor};
-  color: ${primaryColor};
-  background-color: white;
-  border-radius: 5px;
-  transition: 0.3s;
-  &:hover {
-    color: white;
-    background-color: ${primaryColor};
-    cursor: pointer;
-  }
 `;
 
 // FormHelper--------------------------------------------------------------------------
@@ -255,7 +243,9 @@ const SignUp = () => {
             <FormHelperPWCF ispassword2={isPassword2 ? "true" : "false"}>
               {password2Message}
             </FormHelperPWCF>
-            <SubmitBtn>등록</SubmitBtn>
+            <BtnWrapper>
+              <PrimaryBtn btnName={"등록"}></PrimaryBtn>
+            </BtnWrapper>
           </FormControl>
         </Box>
       </Wrapper>
