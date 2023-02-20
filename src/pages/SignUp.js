@@ -23,31 +23,31 @@ const BtnWrapper = styled.section`
 // FormHelper--------------------------------------------------------------------------
 const FormHelperEmails = styled(FormHelperText)`
   width: 100%;
-  padding-left: 16px;
+  margin-left: 0 !important;
   font-weight: 700 !important;
   color: ${(props) =>
-    props.isemail === "true" ? "#71c4eb" : "#d32f2f"} !important;
+    props.isemail === "true" ? "#71c4eb" : `${primaryColor}`} !important;
 `;
 const FormHelperNames = styled(FormHelperText)`
   width: 100%;
-  padding-left: 16px;
+  margin-left: 0 !important;
   font-weight: 700 !important;
   color: ${(props) =>
-    props.isname === "true" ? "#71c4eb" : "#d32f2f"} !important;
+    props.isname === "true" ? "#71c4eb" : `${primaryColor}`} !important;
 `;
 const FormHelperPWs = styled(FormHelperText)`
   width: 100%;
-  padding-left: 16px;
+  margin-left: 0 !important;
   font-weight: 700 !important;
   color: ${(props) =>
-    props.ispassword1 === "true" ? "#71c4eb" : "#d32f2f"} !important;
+    props.ispassword1 === "true" ? "#71c4eb" : `${primaryColor}`} !important;
 `;
 const FormHelperPWCF = styled(FormHelperText)`
   width: 100%;
-  padding-left: 16px;
+  margin-left: 0 !important;
   font-weight: 700 !important;
   color: ${(props) =>
-    props.ispassword2 === "true" ? "#71c4eb" : "#d32f2f"} !important;
+    props.ispassword2 === "true" ? "#71c4eb" : `${primaryColor}`} !important;
 `;
 
 const SignUp = () => {
@@ -77,10 +77,10 @@ const SignUp = () => {
     setEmail(emailCurrent);
 
     if (!emailRegex.test(emailCurrent)) {
-      setEmailMessage("이메일 형식이 틀렸습니다");
+      setEmailMessage("유효하지 않은 이메일");
       setIsEmail(false);
     } else {
-      setEmailMessage("올바른 이메일 형식입니다");
+      setEmailMessage("유효한 이메일 형식");
       setIsEmail(true);
     }
   }, []);
@@ -91,7 +91,7 @@ const SignUp = () => {
     const nameCurrent = e.target.value;
     setName(nameCurrent);
     if (!nameRegex.test(nameCurrent)) {
-      setNameMessage("한글 또는 영문자만 가능[1~10글자]");
+      setNameMessage("한글or영문자[1~10글자]");
       setIsName(false);
     } else {
       setNameMessage("올바른 이름 형식");
@@ -107,7 +107,7 @@ const SignUp = () => {
     setPassword1(password1Current);
 
     if (!password1Regex.test(password1Current)) {
-      setPassword1Message("숫자+영문자+특수문자 조합 8자리 이상 입력");
+      setPassword1Message("숫자+영문자+특수문자 조합 8자리↑");
       setIsPassword1(false);
     } else {
       setPassword1Message("비밀번호 보안 높음");
