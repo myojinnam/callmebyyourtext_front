@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import styles from "./pointCheck.module.css";
-import Back from "../../assets/images/back.png";
-import Menu from "../../assets/images/menu.png";
-import Notification from "../../assets/images/notification.png";
+import styles from "../styles/pointCheck.module.css";
+import Back from "../assets/images/back.png";
+import Menu from "../assets/images/menu.png";
+import Notification from "../assets/images/notification.png";
 
-class pointCheck extends Component {
-  render() {
+const PointCheck = () => {
     const username = "홍길동";
     const point = 500;
+    
     return (
     <div className={styles.main}>
       <img src={Back} alt="error"/>
@@ -28,7 +28,6 @@ class pointCheck extends Component {
       </p>
     </div>
     );
-  }
 }
 
 export default pointCheck;

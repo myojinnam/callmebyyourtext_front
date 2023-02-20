@@ -1,10 +1,10 @@
-import React, { Component, useState } from "react";
-import styles from "./newQuestion.module.css";
-import Menu from "../../assets/images/menu.png";
-import Notification from "../../assets/images/notification.png";
-import InputImage from "../../assets/images/titleLogo.png";
-import Background1 from "../../assets/images/newQuestion_img1.png";
-import Background2 from "../../assets/images/newQuestion_img2.png";
+import React, { useState } from "react";
+import styles from "../styles/newQuestion.module.css";
+import Menu from "../assets/images/menu.png";
+import Notification from "../assets/images/notification.png";
+import InputImage from "../assets/images/titleLogo.png";
+import Background1 from "../assets/images/newQuestion_img1.png";
+import Background2 from "../assets/images/newQuestion_img2.png";
 
 const NewQuestion = () => {
     /* 임시로 해둠 */

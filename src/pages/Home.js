@@ -29,7 +29,7 @@ const Home = () => {
   const loading = () => {
     setTimeout(() => {
       navigate("/question");
-    }, 3000);
+    }, 1000);
   };
 
   useEffect(() => {
