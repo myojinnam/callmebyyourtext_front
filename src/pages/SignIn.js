@@ -22,7 +22,7 @@ const SignIn = () => {
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
   useEffect(() => {
     if (isLoggedIn) {
-      navigate("/home", { replace: true });
+      navigate("/", { replace: true });
     }
   }, [isLoggedIn]);
 
@@ -51,6 +51,7 @@ const SignIn = () => {
         setIsLoggedIn(true);
         localStorage.setItem("auth", true);
         localStorage.setItem("token", response.data.token);
+        alert("로그인되었습니다.");
         navigate("/question", { replace: true });
       })
       .catch((error) => {

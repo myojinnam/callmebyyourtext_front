@@ -4,6 +4,8 @@ import { primaryColor } from "../styles/GlobalStyle";
 import { useNavigate } from "react-router-dom";
 import PrimaryBtn from "../components/Button/PrimaryBtn";
 
+const Auth = JSON.parse(localStorage.getItem("auth"));
+
 const LogIn = styled.p`
   font-size: 14px;
   position: fixed;
@@ -11,7 +13,11 @@ const LogIn = styled.p`
   right: 13px;
   color: ${primaryColor};
   cursor: pointer;
+  display: ${Auth ? "none" : "inline-block"};
 `;
+
+const LogOut = styled.p``;
+
 const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
@@ -37,8 +43,8 @@ const Question = () => {
     <>
       <LogIn onClick={signIn}>로그인</LogIn>
       <Wrapper>
-        <Header>홍길동님의 질문입니다.</Header>
-        <QuestionBox>저의 첫인상은 어땠나요?</QuestionBox>
+        <Header>***님의 질문입니다.</Header>
+        <QuestionBox>질문란</QuestionBox>
         <PrimaryBtn btnName={"답변 등록"}></PrimaryBtn>
       </Wrapper>
     </>
