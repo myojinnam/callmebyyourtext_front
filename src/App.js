@@ -11,6 +11,7 @@ import PointCheck from "./pages/PointCheck";
 import SignUp from "./pages/SignUp";
 import { AuthContext } from "./context/AuthContext";
 import MyPage from "./pages/MyPage";
+import Snowfall from "react-snowfall";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -22,6 +23,7 @@ const App = () => {
   }, [isLoggedIn]);
   return (
     <>
+      <Snowfall color="pink" snowflakeCount={10} />
       <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
         <GlobalStyle />
         <Routes>
