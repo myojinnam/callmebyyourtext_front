@@ -10,8 +10,8 @@
 .top {
   background-color: #ffffff;
   opacity: 63%;
-  padding-top: 50px;
-  padding-bottom: 40px;
+  padding-top: 30px;
+
   display: flex;
   flex-direction: column;
 }
@@ -52,7 +52,6 @@
 
 /* 포인트 */
 .pointFont {
-  margin-top: 5px;
   margin-left: 230px;
 }
 
@@ -85,16 +84,22 @@
   font-size: 17px;
   color: #d07c81;
   background-color: unset;
-  border: 1px solid #d07c81;
+  border: 1px solid #D07C81;
   border-radius: 5px;
   margin-top: 25px;
-  box-shadow: 0px 3px 4px gray;
+  box-shadow: 0px 2px 3px rgb(183, 183, 183);
   z-index: 1;
+}
+.addBtn:hover {
+  color: white;
+  background-color: #D07C81;
+  cursor: pointer;
 }
 
 /* 뒷배경 꽃1 */
 .img1 {
-  margin-top: -265px;
+  float: right;
+  margin-top: -300px;
   margin-left: auto;
   z-index: 0;
 }
