@@ -2,9 +2,9 @@ import { createGlobalStyle } from "styled-components";
 
 export const primaryColor = "#D07C81";
 export const secondaryColor = "#79756E";
-export const GlobalStyle = createGlobalStyle`
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+export const pointColor = "#613B3E";
 
+export const GlobalStyle = createGlobalStyle`
 body {
   display: flex;
   align-items: center;
