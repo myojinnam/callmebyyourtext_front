@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import PrimaryBtn from "../components/Button/PrimaryBtn";
 import Menu from "../assets/images/menu.png";
 import { AuthContext } from "../context/AuthContext";
+import { TextField } from "@mui/material";
 
 const Auth = JSON.parse(localStorage.getItem("auth"));
 
@@ -72,6 +73,22 @@ const Question = () => {
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s,
         </QuestionBox>
+        <TextField
+          variant="outlined"
+          autoFocus
+          fullWidth
+          color="secondary"
+          id="answer"
+          label="답변을 입력해주세요."
+          name="answer"
+          autoComplete="answer"
+          sx={{
+            borderBottom: `1px dashed ${primaryColor}`,
+            borderRadius: 3,
+            marginBottom: 2,
+          }}
+          // onChange={onChange}
+        />
         <PrimaryBtn btnName={"답변 등록"}></PrimaryBtn>
       </Wrapper>
     </>

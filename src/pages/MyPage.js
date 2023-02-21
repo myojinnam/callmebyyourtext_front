@@ -17,6 +17,10 @@ const Img = styled.img`
   width: 20px;
 `;
 
+const LogOutText = styled.span`
+  cursor: pointer;
+`;
+
 const modalStyle = {
   position: "absolute",
   top: "50%",
@@ -113,6 +117,10 @@ const MyPage = () => {
               borderBottom: `1px solid ${primaryColor}`,
               marginBottom: 3,
               cursor: "pointer",
+              transition: "0.5s",
+              "&:hover": {
+                color: `${primaryColor}`,
+              },
             }}
           >
             <Img src={HeartLogo} /> 새로운 질문 만들기
@@ -126,6 +134,10 @@ const MyPage = () => {
               borderBottom: `1px solid ${primaryColor}`,
               marginBottom: 3,
               cursor: "pointer",
+              transition: "0.5s",
+              "&:hover": {
+                color: `${primaryColor}`,
+              },
             }}
           >
             <Img src={HeartLogo} /> 내 질문 리스트 보기
@@ -138,11 +150,15 @@ const MyPage = () => {
               fontFamily: "Noto Sans KR Black",
               opacity: "75%",
               textAlign: "right",
-              cursor: "pointer",
+              transition: "0.5s",
+              "&:hover": {
+                color: `${primaryColor}`,
+              },
             }}
-            onClick={logout}
           >
-            로그아웃
+            <LogOutText>
+              <span onClick={logout}>로그아웃</span>
+            </LogOutText>
           </Typography>
         </Box>
       </Modal>
