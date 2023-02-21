@@ -25,7 +25,7 @@ const App = () => {
       <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
         <GlobalStyle />
         <Routes>
-          <Route path="/newquestion" element={<Home />}></Route>
+          <Route path="/" element={<Home />}></Route>
           <Route path="/question" element={<Question />}></Route>
           <Route path="/signin" element={<SignIn />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
@@ -38,7 +38,7 @@ const App = () => {
             path="/forEnterComment"
             element={<ForEnterComment user={"홍길동"} />}
           ></Route>
-          <Route path="/" element={<NewQuestion />}></Route>
+          <Route path="/newquestion" element={<NewQuestion />}></Route>
           <Route path="/pointcheck" element={<PointCheck />}></Route>
         </Routes>
       </AuthContext.Provider>
