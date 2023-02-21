@@ -10,8 +10,8 @@
 .top {
   background-color: #ffffff;
   opacity: 63%;
-  padding-top: 50px;
-  padding-bottom: 40px;
+  padding-top: 30px;
+
   display: flex;
   flex-direction: column;
 }
@@ -52,7 +52,6 @@
 
 /* 포인트 */
 .pointFont {
-  margin-top: 5px;
   margin-left: 230px;
 }
 
@@ -100,7 +99,7 @@
 /* 뒷배경 꽃1 */
 .img1 {
   float: right;
-  margin-top: -265px;
+  margin-top: -300px;
   margin-left: auto;
   z-index: 0;
 }

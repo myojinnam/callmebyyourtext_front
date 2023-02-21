@@ -25,10 +25,10 @@ function NewQuestion() {
             <img className={styles.menuImg} src={Menu} alt="error" />
             <img className={styles.notiImg} src={Notification} alt="error" />
           </div>
-          <p className={styles.userName}>
+          <div className={styles.userName}>
             <img className={styles.usernameImg} src={InputImage} alt="error" />
             {username}
-          </p>
+          </div>
           <p className={styles.pointFont}>포인트 : {point}</p>
         </div>
         <br/>
