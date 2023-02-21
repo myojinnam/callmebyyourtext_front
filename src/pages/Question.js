@@ -14,7 +14,7 @@ const LogIn = styled.p`
   right: 13px;
   color: ${primaryColor};
   cursor: pointer;
-  display: ${Auth ? "none" : "inline-block"};
+  // display: ${Auth ? "none" : "inline-block"};
 `;
 
 const MyPage = styled.img`
