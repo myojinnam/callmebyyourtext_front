@@ -1,9 +1,11 @@
-import { Typography, Box } from "@mui/material";
-import React from "react";
+import { Typography, Box, Modal } from "@mui/material";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { pointColor, primaryColor } from "../styles/GlobalStyle";
 import Typewriter from "typewriter-effect";
 import PrimaryBtn from "../components/Button/PrimaryBtn";
+import HeartLogo from "../assets/images/inputId.png";
+import { AuthContext } from "../context/AuthContext";
 
 const Wrapper = styled.section`
   display: flex;
@@ -11,16 +13,50 @@ const Wrapper = styled.section`
   align-items: center;
 `;
 
+const Img = styled.img`
+  width: 20px;
+`;
+
+const LogOutText = styled.span`
+  cursor: pointer;
+`;
+
+const modalStyle = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 250,
+  bgcolor: "background.paper",
+  border: `1px solid ${primaryColor}`,
+  borderRadius: 3,
+  boxShadow: 24,
+  p: 4,
+};
+
 const MyPage = () => {
-  // if (window.confirm("정말 로그아웃하시겠습니까?")) {
-  //   setIsLoggedIn(false);
-  //   localStorage.clear();
-  //   alert("로그아웃되었습니다.");
-  //   // navigate("/", { replace: true });
-  //   window.location.replace("/");
-  // } else {
-  //   return;
-  // }
+  // 변수 관리
+  const userName = localStorage.getItem("name");
+  const { setIsLoggedIn } = useContext(AuthContext);
+
+  // 모달 관리
+  const [open, setOpen] = useState(false);
+  const modalOpen = () => setOpen(true);
+  const modalClose = () => setOpen(false);
+
+  // 로그아웃 관리
+  const logout = () => {
+    if (window.confirm("정말 로그아웃하시겠습니까?")) {
+      setIsLoggedIn(false);
+      localStorage.clear();
+      alert("로그아웃되었습니다.");
+      // navigate("/", { replace: true });
+      window.location.replace("/");
+    } else {
+      return;
+    }
+  };
+
   return (
     <>
       <Typography
@@ -31,13 +67,15 @@ const MyPage = () => {
           marginBottom: "30%",
         }}
       >
-        ***님의 페이지입니다.
+        {userName}님의 페이지
       </Typography>
       <Wrapper>
         <Box
           sx={{
             whiteSpace: "pre-wrap",
-            fontSize: "14px",
+            fontSize: "13px",
+            fontWeight: "600",
+            minHeight: "15vh",
             color: `${pointColor}`,
             marginBottom: 5,
           }}
@@ -45,20 +83,85 @@ const MyPage = () => {
           <Typewriter
             onInit={(typewriter) => {
               typewriter
-                .typeString(
-                  "'벚꽃 피는 3월, 새 학기, 새 출발\n어느새 눈이 녹고 개강"
-                )
+                .typeString("'꽃 피는 계절, 새로운 시작.\n")
+                .pauseFor(1000)
+                .typeString("겨울이 추위를 녹이는 시간.\n")
                 .pauseFor(500)
+                .typeString("산들바람, ")
+                .pauseFor(500)
+                .typeString("불어오는 개강")
+                .pauseFor(700)
                 .deleteChars(2)
-                .typeString(
-                  "<strong>따스한 봄</strong>이에요.\n\n모든 것이 새로이 시작되는 시기,\n<strong>나</strong>에 대해 더 알아봐요.'"
-                )
+                .typeString("<strong>따스한 봄</strong>.\n\n")
+                .pauseFor(1000)
+                .typeString("<strong>당신</strong>은 어떤 사람인가요?'")
                 .start();
             }}
           />
         </Box>
-        <PrimaryBtn btnName={"더 알아보기"}></PrimaryBtn>
+        <PrimaryBtn btnName={"더 알아보기"} onClick={modalOpen}></PrimaryBtn>
       </Wrapper>
+      <Modal
+        open={open}
+        onClose={modalClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={modalStyle}>
+          <Typography
+            id="modal-modal-description"
+            sx={{
+              mt: 2,
+              fontSize: 16,
+              fontFamily: "Noto Sans KR Black",
+              borderBottom: `1px solid ${primaryColor}`,
+              marginBottom: 3,
+              cursor: "pointer",
+              transition: "0.5s",
+              "&:hover": {
+                color: `${primaryColor}`,
+              },
+            }}
+          >
+            <Img src={HeartLogo} /> 새로운 질문 만들기
+          </Typography>
+          <Typography
+            id="modal-modal-description"
+            sx={{
+              mt: 2,
+              fontSize: 16,
+              fontFamily: "Noto Sans KR Black",
+              borderBottom: `1px solid ${primaryColor}`,
+              marginBottom: 3,
+              cursor: "pointer",
+              transition: "0.5s",
+              "&:hover": {
+                color: `${primaryColor}`,
+              },
+            }}
+          >
+            <Img src={HeartLogo} /> 내 질문 리스트 보기
+          </Typography>
+          <Typography
+            id="modal-modal-description"
+            sx={{
+              mt: 2,
+              fontSize: 13,
+              fontFamily: "Noto Sans KR Black",
+              opacity: "75%",
+              textAlign: "right",
+              transition: "0.5s",
+              "&:hover": {
+                color: `${primaryColor}`,
+              },
+            }}
+          >
+            <LogOutText>
+              <span onClick={logout}>로그아웃</span>
+            </LogOutText>
+          </Typography>
+        </Box>
+      </Modal>
     </>
   );
 };
