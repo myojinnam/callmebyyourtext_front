@@ -5,13 +5,14 @@ import Home from "./pages/Home";
 import Question from "./pages/Question";
 import SignIn from "./pages/SignIn";
 import ForEnterComment from "./pages/ForEnterComment";
-import LoginForComment from "./pages/LoginForComment/LoginForComment";
+import LoginForComment from "./pages/LoginForComment";
 import NewQuestion from "./pages/NewQuestion";
 import PointCheck from "./pages/PointCheck";
 import SignUp from "./pages/SignUp";
 import { AuthContext } from "./context/AuthContext";
 import MyPage from "./pages/MyPage";
 import Snowfall from "react-snowfall";
+import LoadingToLoginForComment from "./pages/LoadingToLoginForComment";
 
 const flowerFlake1 = document.createElement("img");
 flowerFlake1.src = "./assets/images/cherryblossom1.png";
@@ -50,14 +51,16 @@ const App = () => {
           <Route path="/signin" element={<SignIn />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/mypage" element={<MyPage />}></Route>
-          <Route
-            path="/loginForComment"
-            element={<LoginForComment user={"홍길동"} />}
-          ></Route>
+          <Route path="/loginForComment" element={<LoginForComment />}></Route>
           <Route
             path="/forEnterComment"
             element={<ForEnterComment user={"홍길동"} />}
           ></Route>
+          <Route
+            path="/loadingToLoginForComment"
+            element={<LoadingToLoginForComment />}
+          ></Route>
+
           <Route path="/newquestion" element={<NewQuestion />}></Route>
           <Route path="/pointcheck" element={<PointCheck />}></Route>
         </Routes>
