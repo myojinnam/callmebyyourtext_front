@@ -6,8 +6,8 @@ import Question from "./pages/Question";
 import SignIn from "./pages/SignIn";
 import ForEnterComment from "./pages/ForEnterComment";
 import LoginForComment from "./pages/LoginForComment/LoginForComment";
-import NewQuestion from "./components/NewQuestion/NewQuestion";
-import PointCheck from "./components/PointCheck/PointCheck";
+import NewQuestion from "./pages/NewQuestion";
+import PointCheck from "./pages/PointCheck";
 import SignUp from "./pages/SignUp";
 import { AuthContext } from "./context/AuthContext";
 

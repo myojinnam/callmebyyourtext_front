@@ -6,7 +6,7 @@ import InputImage from "../assets/images/titleLogo.png";
 import Background1 from "../assets/images/newQuestion_img1.png";
 import Background2 from "../assets/images/newQuestion_img2.png";
 
-const NewQuestion = () => {
+function NewQuestion() {
     /* 임시로 해둠 */
     const username = "홍길동";
     const point = 500;
@@ -25,11 +25,11 @@ const NewQuestion = () => {
             <img className={styles.menuImg} src={Menu} alt="error" />
             <img className={styles.notiImg} src={Notification} alt="error" />
           </div>
-          <text className={styles.userName}>
+          <p className={styles.userName}>
             <img className={styles.usernameImg} src={InputImage} alt="error" />
             {username}
-          </text>
-          <text className={styles.pointFont}>포인트 : {point}</text>
+          </p>
+          <p className={styles.pointFont}>포인트 : {point}</p>
         </div>
         <br/>
         { visible ? (
@@ -46,7 +46,7 @@ const NewQuestion = () => {
           </div>
           ) : (
           <div className={styles.createQuestion}>
-            <text>질문이 생성되었습니다.<br/>친구들에게 공유해보세요!</text>
+            <p>질문이 생성되었습니다.<br/>친구들에게 공유해보세요!</p>
             <br/>
             <button 
               className={styles.addBtn}
