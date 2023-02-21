@@ -6,8 +6,8 @@ import Question from "./pages/Question";
 import SignIn from "./pages/SignIn";
 import ForEnterComment from "./pages/ForEnterComment";
 import LoginForComment from "./pages/LoginForComment/LoginForComment";
-import NewQuestion from "./components/NewQuestion/NewQuestion";
-import PointCheck from "./components/PointCheck/PointCheck";
+import NewQuestion from "./pages/NewQuestion";
+import PointCheck from "./pages/PointCheck";
 import SignUp from "./pages/SignUp";
 import { AuthContext } from "./context/AuthContext";
 
@@ -24,7 +24,7 @@ const App = () => {
       <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
         <GlobalStyle />
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/newquestion" element={<Home />}></Route>
           <Route path="/question" element={<Question />}></Route>
           <Route path="/signin" element={<SignIn />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
@@ -36,7 +36,7 @@ const App = () => {
             path="/forEnterComment"
             element={<ForEnterComment user={"홍길동"} />}
           ></Route>
-          <Route path="/newquestion" element={<NewQuestion />}></Route>
+          <Route path="/" element={<NewQuestion />}></Route>
           <Route path="/pointcheck" element={<PointCheck />}></Route>
         </Routes>
       </AuthContext.Provider>
