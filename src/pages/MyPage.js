@@ -37,7 +37,8 @@ const MyPage = () => {
         <Box
           sx={{
             whiteSpace: "pre-wrap",
-            fontSize: "14px",
+            fontSize: "13px",
+            fontWeight: "600",
             color: `${pointColor}`,
             marginBottom: 5,
           }}
@@ -45,14 +46,18 @@ const MyPage = () => {
           <Typewriter
             onInit={(typewriter) => {
               typewriter
-                .typeString(
-                  "'벚꽃 피는 3월, 새 학기, 새 출발\n어느새 눈이 녹고 개강"
-                )
+                .typeString("'꽃 피는 계절, 새로운 시작.\n")
+                .pauseFor(1000)
+                .typeString("겨울이 추위를 녹이는 시간.\n")
                 .pauseFor(500)
+                .typeString("산들바람, ")
+                .pauseFor(500)
+                .typeString("불어오는 개강")
+                .pauseFor(700)
                 .deleteChars(2)
-                .typeString(
-                  "<strong>따스한 봄</strong>이에요.\n\n모든 것이 새로이 시작되는 시기,\n<strong>나</strong>에 대해 더 알아봐요.'"
-                )
+                .typeString("<strong>따스한 봄</strong>.\n\n")
+                .pauseFor(1000)
+                .typeString("<strong>당신</strong>은 어떤 사람인가요?'")
                 .start();
             }}
           />
