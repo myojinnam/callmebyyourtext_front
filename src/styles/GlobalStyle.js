@@ -17,13 +17,6 @@ body {
   // border: 1px solid black;
 }
 
-// 본인 파트 확인하시고 필요한 섹션에만 적용하시는 게 좋을 것 같아요
-// 해결되셨으면 주석은 지워주세요
-// #root{
-//   width:100%;
-//   height:100%;
-// }
-
 ul {
   list-style: none;
   padding-left: 0;
