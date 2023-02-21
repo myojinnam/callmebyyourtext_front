@@ -10,6 +10,7 @@ import NewQuestion from "./components/NewQuestion/NewQuestion";
 import PointCheck from "./components/PointCheck/PointCheck";
 import SignUp from "./pages/SignUp";
 import { AuthContext } from "./context/AuthContext";
+import MyPage from "./pages/MyPage";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/question" element={<Question />}></Route>
           <Route path="/signin" element={<SignIn />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
+          <Route path="/mypage" element={<MyPage />}></Route>
           <Route
             path="/loginForComment"
             element={<LoginForComment user={"홍길동"} />}

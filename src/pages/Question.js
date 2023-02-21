@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { primaryColor } from "../styles/GlobalStyle";
 import { useNavigate } from "react-router-dom";
 import PrimaryBtn from "../components/Button/PrimaryBtn";
 import Menu from "../assets/images/menu.png";
 import { AuthContext } from "../context/AuthContext";
+import { Modal } from "@mui/material/";
 
 const Auth = JSON.parse(localStorage.getItem("auth"));
 
@@ -18,10 +19,10 @@ const LogIn = styled.p`
   display: ${Auth ? "none" : "inline-block"};
 `;
 
-const LogOut = styled.img`
-  postion: absolute;
-  top: 5px;
-  right: 13px;
+const MyPage = styled.img`
+  width: auto;
+  height: auto;
+  cursor: pointer;
 `;
 
 const Wrapper = styled.section`
@@ -35,9 +36,10 @@ const Header = styled.p`
 `;
 
 const QuestionBox = styled.section`
-  box-shadow: 0px 4px 5px 0px rgb(0 0 0 / 30%);
-  min-height: 50px;
-  margin-bottom: 30%;
+  box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 20%);
+  border-radius: 5px;
+  min-height: 100px;
+  margin-bottom: 10%;
 `;
 
 const Question = () => {
@@ -47,21 +49,22 @@ const Question = () => {
   const goToSignIn = () => {
     navigate("/signin");
   };
-  const logOut = () => {
-    if (window.confirm("정말 로그아웃하시겠습니까?")) {
-      setIsLoggedIn(false);
-      localStorage.clear();
-      alert("로그아웃되었습니다.");
-      // navigate("/", { replace: true });
-      window.location.replace("/");
-    } else {
-      return;
-    }
+  const goToMyPage = () => {
+    navigate("/mypage");
+    // if (window.confirm("정말 로그아웃하시겠습니까?")) {
+    //   setIsLoggedIn(false);
+    //   localStorage.clear();
+    //   alert("로그아웃되었습니다.");
+    //   // navigate("/", { replace: true });
+    //   window.location.replace("/");
+    // } else {
+    //   return;
+    // }
   };
   return (
     <>
       <LogIn onClick={goToSignIn}>로그인</LogIn>
-      <LogOut src={Menu} onClick={logOut} />
+      <MyPage src={Menu} onClick={goToMyPage} />
       <Wrapper>
         <Header>***님의 질문입니다.</Header>
         <QuestionBox>질문란</QuestionBox>
