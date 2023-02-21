@@ -26,7 +26,6 @@ const MyPage = styled.img`
 const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
-  align-content: center;
 `;
 const Header = styled.p`
   color: ${primaryColor};
