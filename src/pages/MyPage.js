@@ -1,10 +1,11 @@
 import { Typography, Box, Modal } from "@mui/material";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { pointColor, primaryColor } from "../styles/GlobalStyle";
 import Typewriter from "typewriter-effect";
 import PrimaryBtn from "../components/Button/PrimaryBtn";
 import HeartLogo from "../assets/images/inputId.png";
+import { AuthContext } from "../context/AuthContext";
 
 const Wrapper = styled.section`
   display: flex;
@@ -30,18 +31,28 @@ const modalStyle = {
 };
 
 const MyPage = () => {
-  // if (window.confirm("정말 로그아웃하시겠습니까?")) {
-  //   setIsLoggedIn(false);
-  //   localStorage.clear();
-  //   alert("로그아웃되었습니다.");
-  //   // navigate("/", { replace: true });
-  //   window.location.replace("/");
-  // } else {
-  //   return;
-  // }
+  // 변수 관리
+  const userName = localStorage.getItem("name");
+  const { setIsLoggedIn } = useContext(AuthContext);
+
+  // 모달 관리
   const [open, setOpen] = useState(false);
   const modalOpen = () => setOpen(true);
   const modalClose = () => setOpen(false);
+
+  // 로그아웃 관리
+  const logout = () => {
+    if (window.confirm("정말 로그아웃하시겠습니까?")) {
+      setIsLoggedIn(false);
+      localStorage.clear();
+      alert("로그아웃되었습니다.");
+      // navigate("/", { replace: true });
+      window.location.replace("/");
+    } else {
+      return;
+    }
+  };
+
   return (
     <>
       <Typography
@@ -52,7 +63,7 @@ const MyPage = () => {
           marginBottom: "30%",
         }}
       >
-        ***님의 페이지입니다.
+        {userName}님의 페이지
       </Typography>
       <Wrapper>
         <Box
@@ -60,6 +71,7 @@ const MyPage = () => {
             whiteSpace: "pre-wrap",
             fontSize: "13px",
             fontWeight: "600",
+            minHeight: "15vh",
             color: `${pointColor}`,
             marginBottom: 5,
           }}
@@ -128,6 +140,7 @@ const MyPage = () => {
               textAlign: "right",
               cursor: "pointer",
             }}
+            onClick={logout}
           >
             로그아웃
           </Typography>

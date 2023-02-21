@@ -54,6 +54,8 @@ const SignIn = () => {
       .then((response) => {
         setIsLoggedIn(true);
         localStorage.setItem("auth", true);
+        localStorage.setItem("id", response.data.id);
+        localStorage.setItem("name", response.data.name);
         localStorage.setItem("token", response.data.token);
         alert("로그인되었습니다.");
         navigate("/question", { replace: true });
