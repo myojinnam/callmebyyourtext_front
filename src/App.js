@@ -12,6 +12,18 @@ import SignUp from "./pages/SignUp";
 import { AuthContext } from "./context/AuthContext";
 import MyPage from "./pages/MyPage";
 import Snowfall from "react-snowfall";
+import flowerFlake2 from "./assets/images/cherryblossom2.png";
+
+const flowerFlake1 = document.createElement("img");
+flowerFlake1.src = "./assets/images/cherryblossom1.png";
+
+// const flowerFlake2 = document.createElement("img");
+// flowerFlake2.src = "./assets/images/cherryblossom2.png";
+
+const flowerFlake3 = document.createElement("img");
+flowerFlake3.src = "./assets/images/cherryblossom3.png";
+
+const springEffect = [flowerFlake2];
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -23,7 +35,14 @@ const App = () => {
   }, [isLoggedIn]);
   return (
     <>
-      <Snowfall color="pink" snowflakeCount={10} />
+      <Snowfall
+        color="pink"
+        snowflakeCount={10}
+        changeFrequency={100}
+        speed={[1.0, 2.0]}
+        wind={[-0.5, 1.5]}
+        // images={springEffect}
+      />
       <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
         <GlobalStyle />
         <Routes>
