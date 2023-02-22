@@ -17,11 +17,15 @@ const CreateQuestion = () => {
       [name]: value,
     });
   };
+  const Token = localStorage.getItem("token");
+  const Id = localStorage.getItem("id");
+
   const onSubmit = async (e) => {
     e.preventDefault();
     await axios
       .post("http://127.0.0.1:8000/questions", question)
       .then((response) => {
+        axios.defaults.headers.common["Authorization"] = "Token " + Token;
         console.log(response);
       })
       .catch((error) => {
