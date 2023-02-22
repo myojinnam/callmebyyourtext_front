@@ -153,6 +153,7 @@ export default function ForEnterComment() {
               // 백엔드로 데이터 전송 후
               () => navigate("/endtocomment")
             }
+            text={"로그인하고 답변을 달면 100포인트가 지급됩니다."}
           />
         </Main>
       </Wrapper>
