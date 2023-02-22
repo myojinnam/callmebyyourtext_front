@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { primaryColor } from "../styles/GlobalStyle";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import PrimaryBtn from "../components/Button/PrimaryBtn";
 import Menu from "../assets/images/menu.png";
 import { AuthContext } from "../context/AuthContext";
@@ -14,14 +14,19 @@ import {
 } from "../components/Styled";
 
 const Question = () => {
+  const userId = localStorage.getItem("id");
   const navigate = useNavigate();
+  const copyLink = () => {
+    navigator.clipboard.writeText(window.document.location.href);
+    alert("주소가 복사되었습니다.");
+  };
   const { isLoggedIn } = useContext(AuthContext);
   const goToSignIn = () => {
     navigate("/signin");
   };
   const goToMyPage = () => {
     if (isLoggedIn) {
-      navigate("/mypage");
+      navigate(`/mypage/${userId}`);
     } else {
       return alert("로그인 후 이용해주세요.");
     }
@@ -59,7 +64,12 @@ const Question = () => {
         />
         <PrimaryBtn btnName={"답변 등록"} onClick={onSubmit}></PrimaryBtn>
         <br />
-        <PrimaryBtn btnName={"sns 공유하기"}></PrimaryBtn>
+        <PrimaryBtn
+          btnName={"SNS 공유하기"}
+          onClick={() => alert("준비 중입니다.")}
+        ></PrimaryBtn>
+        <br />
+        <PrimaryBtn btnName={"주소 복사"} onClick={copyLink}></PrimaryBtn>
       </Wrapper>
     </>
   );

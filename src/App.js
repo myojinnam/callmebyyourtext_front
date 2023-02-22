@@ -16,6 +16,7 @@ import LoadingToLoginForComment from "./pages/LoadingToLoginForComment";
 import CreateQuestion from "./pages/CreateQuestion";
 import EndToComment from "./pages/EndToComment";
 import QuestionList from "./pages/QuestionList";
+import NotFound from "./pages/NotFound";
 
 const flowerFlake1 = document.createElement("img");
 flowerFlake1.src = "./assets/images/cherryblossom1.png";
@@ -49,13 +50,14 @@ const App = () => {
       <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
         <GlobalStyle />
         <Routes>
+          <Route path="*" element={<NotFound />}></Route>
           <Route path="/" element={<Home />}></Route>
           <Route path="/question" element={<Question />}></Route>
           <Route path="/questionlist" element={<QuestionList />}></Route>
           <Route path="/createquestion" element={<CreateQuestion />}></Route>
           <Route path="/signin" element={<SignIn />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
-          <Route path="/mypage" element={<MyPage />}></Route>
+          <Route path="/mypage/:userId" element={<MyPage />}></Route>
           <Route path="/loginforcomment" element={<LoginForComment />}></Route>
           <Route path="/forentercomment" element={<ForEnterComment />}></Route>
           <Route

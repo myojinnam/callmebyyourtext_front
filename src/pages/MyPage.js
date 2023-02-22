@@ -14,7 +14,7 @@ import {
   Wrapper,
 } from "../components/Styled";
 
-const MyPage = () => {
+const MyPage = ({ props }) => {
   // 변수 관리
   const navigate = useNavigate();
   const userName = localStorage.getItem("name");
@@ -65,6 +65,7 @@ const MyPage = () => {
             fontSize: "13px",
             fontWeight: "600",
             minHeight: "15vh",
+            lineHeight: "1.5",
             color: `${pointColor}`,
             marginBottom: 5,
           }}
