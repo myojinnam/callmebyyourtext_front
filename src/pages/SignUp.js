@@ -12,14 +12,7 @@ import styled from "styled-components";
 import { primaryColor } from "../styles/GlobalStyle";
 import PrimaryBtn from "../components/Button/PrimaryBtn";
 import axios from "axios";
-
-const Wrapper = styled.section`
-  text-align: center;
-`;
-
-const BtnWrapper = styled.section`
-  margin-top: 10%;
-`;
+import { Wrapper } from "../components/Styled";
 
 // FormHelper--------------------------------------------------------------------------
 const FormHelperEmails = styled(FormHelperText)`
@@ -53,25 +46,25 @@ const FormHelperPWCF = styled(FormHelperText)`
 
 const SignUp = () => {
   const navigate = useNavigate();
-  // Input Component---------------------------------------------------------------------------
+  // Input Component--------------------------------------------------------
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
 
-  // ErrorMessage State------------------------------------------------------------------------
+  // ErrorMessage State-----------------------------------------------------
   const [nameMessage, setNameMessage] = useState("");
   const [emailMessage, setEmailMessage] = useState("");
   const [passwordMessage, setPasswordMessage] = useState("");
   const [password2Message, setPassword2Message] = useState("");
 
-  // Validation State
+  // Validation State-------------------------------------------------------
   const [isName, setIsName] = useState(false);
   const [isEmail, setIsEmail] = useState(false);
   const [isPassword, setIsPassword] = useState(false);
   const [isPassword2, setIsPassword2] = useState(false);
 
-  // Email 유효성 관리
+  // Email 유효성 관리-------------------------------------------------------
   const onChangeEmail = useCallback((e) => {
     const emailRegex =
       /([\w-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
@@ -87,7 +80,7 @@ const SignUp = () => {
     }
   }, []);
 
-  // Name 유효성 관리
+  // Name 유효성 관리-------------------------------------------------------
   const onChangeName = useCallback((e) => {
     const nameRegex = /^(?=.*[a-zA-Z0-9가-힣])[a-zA-Z0-9가-힣]{1,10}$/;
     const nameCurrent = e.target.value;
@@ -101,7 +94,7 @@ const SignUp = () => {
     }
   }, []);
 
-  // 비밀번호 유효성 관리
+  // 비밀번호 유효성 관리----------------------------------------------------
   const onChangePassword1 = useCallback((e) => {
     const passwordRegex =
       /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/;
@@ -117,7 +110,7 @@ const SignUp = () => {
     }
   }, []);
 
-  // 비밀번호 확인 유효성 관리
+  // 비밀번호 확인 유효성 관리-----------------------------------------------
   const onChangePassword2 = useCallback(
     (e) => {
       const password2Current = e.target.value;
@@ -134,7 +127,7 @@ const SignUp = () => {
     [password]
   );
 
-  // Submit 실행-------------------------------------------------------------------------------
+  // Submit 실행------------------------------------------------------------
   const onSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
@@ -242,16 +235,14 @@ const SignUp = () => {
               id="password2"
               name="password2"
               label="비밀번호 확인"
-              sx={{ marginTop: 2 }}
+              sx={{ marginTop: 2, marginBottom: 3 }}
               onChange={onChangePassword2}
               error={password2 !== "" && !isPassword2}
             />
             <FormHelperPWCF ispassword2={isPassword2 ? "true" : "false"}>
               {password2Message}
             </FormHelperPWCF>
-            <BtnWrapper>
-              <PrimaryBtn btnName={"등록"}></PrimaryBtn>
-            </BtnWrapper>
+            <PrimaryBtn btnName={"등록"} type="submit"></PrimaryBtn>
           </FormControl>
         </Box>
       </Wrapper>
