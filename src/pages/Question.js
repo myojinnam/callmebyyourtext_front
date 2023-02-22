@@ -59,7 +59,9 @@ const Question = () => {
         />
         <PrimaryBtn btnName={"답변 등록"} onClick={onSubmit}></PrimaryBtn>
         <br />
-        <PrimaryBtn btnName={"sns 공유하기"}></PrimaryBtn>
+        <PrimaryBtn btnName={"SNS 공유하기"}></PrimaryBtn>
+        <br />
+        <PrimaryBtn btnName={"주소 복사"}></PrimaryBtn>
       </Wrapper>
     </>
   );
