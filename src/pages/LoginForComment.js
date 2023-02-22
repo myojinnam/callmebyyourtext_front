@@ -39,7 +39,7 @@ export default function LoginForComment() {
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
   useEffect(() => {
     if (isLoggedIn) {
-      navigate("/", { replace: true });
+      navigate("/forentercomment", { replace: true });
     }
   }, [isLoggedIn]);
 

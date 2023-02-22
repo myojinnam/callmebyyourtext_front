@@ -44,26 +44,36 @@ const MainTitle = styled.span`
 `;
 
 export default function ForEnterComment() {
-  // State-------------------------------------------------------------------
   const navigate = useNavigate();
-  const userName = localStorage.getItem("name");
   const { isLoggedIn } = useContext(AuthContext);
   // useEffect(() => {
   //   if (isLoggedIn) {
   //     navigate("/", { replace: true });
   //   }
   // }, [isLoggedIn]);
+  const userName = localStorage.getItem("name");
 
-  // textFiled input value state
+  // State-------------------------------------------------------------------
+  // textFiled 입력값 상태
   const [inputText, setInputText] = useState("");
-  // 1st 답변등록 btn click state
+  // 첫번째 답변등록 버튼 상태 (toggle로 사용)
   const [addComment, setAddComment] = useState(false);
-  // 1st 답변등록 text state
   const [buttonText, setButtonText] = useState("댓글달기");
-  // modal click state
-  const [confirmComment, setConfirmComment] = useState(false);
   // 모달 관리
   const [open, setOpen] = useState(false);
+
+  // eventHandler-------------------------------------------------------------------
+  // textfiled change handler
+  const handleChange = (e) => {
+    setInputText(e.target.value);
+    // console.log(inputText);
+  };
+  // 첫번째 답변등록 toggle로 사용
+  const toggleAddComment = () => {
+    setAddComment(!addComment);
+    setButtonText(addComment ? "답변등록" : "돌아가기");
+  };
+  // modal event handler
   const modalOpen = () => {
     if (inputText.trim() === "") {
       alert("답변을 입력해주세요");
@@ -72,24 +82,14 @@ export default function ForEnterComment() {
     setOpen(true);
   };
   const modalClose = () => setOpen(false);
-  const toggleAddComment = () => {
-    setAddComment(!addComment);
-    setButtonText(addComment ? "답변등록" : "돌아가기");
+
+  // 답변달기 확인 handler
+  const comfirmComment = () => {
+    // 백엔드로 답변 보내기
+    alert("답변이 달렸습니다.");
+    navigate("/endtocomment", { replace: true });
   };
 
-  const handleChange = (e) => {
-    setInputText(e.target.value);
-    console.log(inputText);
-  };
-  const handleConfirm = () => {
-    setConfirmComment(!confirmComment);
-  };
-  const handleModal = (modal) => {
-    {
-      modal && setConfirmComment(!confirmComment);
-      //modal 처리
-    }
-  };
   return (
     <>
       <Wrapper>
@@ -143,18 +143,20 @@ export default function ForEnterComment() {
               />
             )}
           </ButtonWrap>
-          <MuiModal
-            open={open}
-            onClose={modalClose}
-            btnName1={"로그인하기"}
-            btnName2={"답변달기"}
-            onClick1={() => navigate("/loadingtologinforcomment")}
-            onClick2={
-              // 백엔드로 데이터 전송 후
-              () => navigate("/endtocomment")
-            }
-            text={"로그인하고 답변을 달면 100포인트가 지급됩니다."}
-          />
+          {/* 로그인 되어있는 사용자는 바로 다음 페이지로 */}
+          {isLoggedIn ? (
+            comfirmComment
+          ) : (
+            <MuiModal
+              open={open}
+              onClose={modalClose}
+              btnName1={"로그인하기"}
+              btnName2={"답변달기"}
+              onClick1={() => navigate("/loadingtologinforcomment")}
+              onClick2={comfirmComment}
+              text={"로그인하고 답변을 달면 100포인트가 지급됩니다."}
+            />
+          )}
         </Main>
       </Wrapper>
     </>
