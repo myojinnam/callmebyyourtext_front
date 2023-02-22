@@ -64,7 +64,10 @@ const Question = () => {
         />
         <PrimaryBtn btnName={"답변 등록"} onClick={onSubmit}></PrimaryBtn>
         <br />
-        <PrimaryBtn btnName={"SNS 공유하기"}></PrimaryBtn>
+        <PrimaryBtn
+          btnName={"SNS 공유하기"}
+          onClick={() => alert("준비 중입니다.")}
+        ></PrimaryBtn>
         <br />
         <PrimaryBtn btnName={"주소 복사"} onClick={copyLink}></PrimaryBtn>
       </Wrapper>

@@ -65,6 +65,7 @@ const MyPage = ({ props }) => {
             fontSize: "13px",
             fontWeight: "600",
             minHeight: "15vh",
+            lineHeight: "1.5",
             color: `${pointColor}`,
             marginBottom: 5,
           }}
