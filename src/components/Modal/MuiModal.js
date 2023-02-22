@@ -16,6 +16,7 @@ const modalStyle = {
   boxShadow: 24,
   border: `1px solid ${primaryColor}`,
   p: 4,
+  pb: 2,
 };
 
 const ButtonWrap = styled.div`
@@ -23,6 +24,23 @@ const ButtonWrap = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-around;
+`;
+
+const BottomBtnWrap = styled.div`
+  width: 100%;
+  text-align: end;
+`;
+const BottomBtn = styled.button`
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 0.2rem 1rem;
+  &:hover {
+    background-color: ${primaryColor};
+    color: white;
+  }
 `;
 
 export default function MuiModal({
@@ -34,6 +52,10 @@ export default function MuiModal({
   btnName2,
   onClick2,
   type2,
+  text,
+  title,
+  bottomBtn,
+  onClickBottom,
 }) {
   return (
     <Modal
@@ -41,6 +63,7 @@ export default function MuiModal({
       onClose={modalClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
+      style={{ "white-space": "pre-line" }}
     >
       <Box sx={modalStyle}>
         <Typography
@@ -49,29 +72,39 @@ export default function MuiModal({
           variant="h6"
           component="h2"
         >
-          Recommend
+          {title}
         </Typography>
         <Typography
           fontFamily="Noto Sans KR Black"
           id="modal-modal-description"
           sx={{ mt: 2 }}
         >
-          로그인하고 답변을 달면 100포인트가 지급됩니다.
+          {text}
         </Typography>
         <ButtonWrap>
-          <PrimaryBtn
-            btnName={btnName1}
-            onClick={onClick1}
-            type={"type1"}
-            width={"100px"}
-          />
-          <PrimaryBtn
-            btnName={btnName2}
-            onClick={onClick2}
-            type={type2}
-            width={"100px"}
-          />
+          {btnName1 && (
+            <PrimaryBtn
+              btnName={btnName1}
+              onClick={onClick1}
+              type={type1}
+              width={"100px"}
+            />
+          )}
+
+          {btnName2 && (
+            <PrimaryBtn
+              btnName={btnName2}
+              onClick={onClick2}
+              type={type2}
+              width={"100px"}
+            />
+          )}
         </ButtonWrap>
+        <BottomBtnWrap>
+          {bottomBtn && (
+            <BottomBtn onClick={onClickBottom}>{bottomBtn}</BottomBtn>
+          )}
+        </BottomBtnWrap>
       </Box>
     </Modal>
   );
