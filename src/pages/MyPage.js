@@ -6,6 +6,7 @@ import Typewriter from "typewriter-effect";
 import PrimaryBtn from "../components/Button/PrimaryBtn";
 import HeartLogo from "../assets/images/inputId.png";
 import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Wrapper = styled.section`
   display: flex;
@@ -36,6 +37,7 @@ const modalStyle = {
 
 const MyPage = () => {
   // 변수 관리
+  const navigate = useNavigate();
   const userName = localStorage.getItem("name");
   const { setIsLoggedIn } = useContext(AuthContext);
 
@@ -43,6 +45,11 @@ const MyPage = () => {
   const [open, setOpen] = useState(false);
   const modalOpen = () => setOpen(true);
   const modalClose = () => setOpen(false);
+
+  // 모달 인풋 관리
+  const goToNewQuestion = () => {
+    navigate("/newquestion");
+  };
 
   // 로그아웃 관리
   const logout = () => {
@@ -122,6 +129,7 @@ const MyPage = () => {
                 color: `${primaryColor}`,
               },
             }}
+            onClick={goToNewQuestion}
           >
             <Img src={HeartLogo} /> 새로운 질문 만들기
           </Typography>
