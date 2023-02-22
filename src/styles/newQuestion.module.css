@@ -1,11 +1,3 @@
-.main {
-  background-color: #fffdf6;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-}
-
 /* 상단 부분 */
 .top {
   background-color: #ffffff;
@@ -77,23 +69,9 @@
   z-index: 1;
 }
 
-/* 질문 생성 버튼 */
-.addBtn {
-  width: 208px;
-  height: 39px;
-  font-size: 17px;
-  color: #d07c81;
-  background-color: unset;
-  border: 1px solid #D07C81;
-  border-radius: 5px;
-  margin-top: 25px;
-  box-shadow: 0px 2px 3px rgb(183, 183, 183);
-  z-index: 1;
-}
-.addBtn:hover {
-  color: white;
-  background-color: #D07C81;
-  cursor: pointer;
+.questionFont {
+  color: #613B3E;
+  font-size: 15px;
 }
 
 /* 뒷배경 꽃1 */

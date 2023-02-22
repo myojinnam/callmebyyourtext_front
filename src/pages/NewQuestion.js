@@ -5,59 +5,60 @@ import Notification from "../assets/images/notification.png";
 import InputImage from "../assets/images/titleLogo.png";
 import Background1 from "../assets/images/newQuestion_img1.png";
 import Background2 from "../assets/images/newQuestion_img2.png";
+import Button from "../components/Button/PrimaryBtn"
 
-function NewQuestion() {
-    /* 임시로 해둠 */
-    const username = "홍길동";
-    const point = 500;
+function NewQuestion({user, point}) {
+  const [visible, setVisible] = useState(true);
 
-    const [visible, setVisible] = useState(true);
-
-    const LinkCopy = () => {
-      navigator.clipboard.writeText(window.document.location.href);
-      alert("URL이 복사되었습니다!");
-    }
-
-    return (
-      <div className={styles.main}>
-        <div className={styles.top}>
-          <div className={styles.topBtn}>
-            <img className={styles.menuImg} src={Menu} alt="error" />
-            <img className={styles.notiImg} src={Notification} alt="error" />
-          </div>
-          <div className={styles.userName}>
-            <img className={styles.usernameImg} src={InputImage} alt="error" />
-            {username}
-          </div>
-          <p className={styles.pointFont}>포인트 : {point}</p>
+  const LinkCopy = () => {
+    navigator.clipboard.writeText(window.document.location.href);
+    alert("URL이 복사되었습니다!");
+  }
+    
+  return (
+    <div className={styles.main}>
+      <div className={styles.top}>
+        <div className={styles.topBtn}>
+          <img className={styles.menuImg} src={Menu} alt="error" />
+          <img className={styles.notiImg} src={Notification} alt="error" />
         </div>
-        <br/>
-        { visible ? (
-          <div className={styles.createQuestion}>
-            <input
-              className={styles.addQuestion}
-              placeholder="새로운 질문을 입력해주세요." />
-            <br/>
-            <button
-              className={styles.addBtn}
-              onClick={() => {
-                setVisible(!visible); 
-              }}>확인</button>
-          </div>
-          ) : (
-          <div className={styles.createQuestion}>
-            <p>질문이 생성되었습니다.<br/>친구들에게 공유해보세요!</p>
-            <br/>
-            <button 
-              className={styles.addBtn}
-              onClick={LinkCopy()}>링크 복사</button>
-            <button className={styles.addBtn}>확인</button>
-          </div>
-          )}
-
-        <img className={styles.img1} src={Background1} alt="error" />
-        <img className={styles.img2} src={Background2} alt="error" />
+        <div className={styles.userName}>
+          <img className={styles.usernameImg} src={InputImage} alt="error" />
+          {user}
+        </div>
+        <p className={styles.pointFont}>포인트 : {point}</p>
       </div>
-    );
+      <br />
+      { visible ? (
+        <div className={styles.createQuestion}>
+        <input
+          className={styles.addQuestion}
+          placeholder="새로운 질문을 입력해주세요."
+        />
+        <br />
+        <Button
+          btnName={"확인"}
+          onClick={() => {
+            setVisible(!visible);
+          }}/>
+      </div>
+      ) : (
+      <div className={styles.createQuestion}>
+        <p className={styles.questionFont}>
+          질문이 생성되었습니다.<br/><br/>친구들에게 공유해보세요!
+        </p>
+        <br/>
+        <Button
+          btnName={"링크 복사"}/>
+        <br/>
+        <Button
+          btnName={"확인"}/>
+      </div>
+      )}
+      
+      <img className={styles.img1} src={Background1} alt="error" />
+      <img className={styles.img2} src={Background2} alt="error" />
+    </div>
+  );
 }
 export default NewQuestion;
