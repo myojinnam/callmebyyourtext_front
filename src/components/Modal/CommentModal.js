@@ -16,13 +16,15 @@ const Modal = styled.div`
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
 `;
 
 const ButtonWrap = styled.div`
   display: flex;
+  width: 100%;
+  justify-content: space-around;
 `;
 export default function CommentModal({
   text,
@@ -41,11 +43,13 @@ export default function CommentModal({
           btnName={btnName1}
           onClick={() => onClick1(true)}
           type={type1}
+          width={"100px"}
         />
         <PrimaryBtn
           btnName={btnName2}
           onClick={() => onClick2(false)}
           type={type2}
+          width={"100px"}
         />
       </ButtonWrap>
     </Modal>

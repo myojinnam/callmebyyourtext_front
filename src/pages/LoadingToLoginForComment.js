@@ -28,7 +28,7 @@ export default function LoadingToLoginForComment() {
   const navigate = useNavigate();
   const loading = () => {
     setTimeout(() => {
-      navigate("/loginForComment");
+      navigate("/loginforcomment");
     }, 1000);
   };
 
