@@ -29,6 +29,9 @@ const MyPage = () => {
   const goToNewQuestion = () => {
     navigate("/createquestion");
   };
+  const goToQuestionList = () => {
+    navigate("/questionlist");
+  };
 
   // 로그아웃 관리
   const logout = () => {
@@ -126,6 +129,7 @@ const MyPage = () => {
                 color: `${primaryColor}`,
               },
             }}
+            onClick={goToQuestionList}
           >
             <SmallImg src={HeartLogo} /> 내 질문 리스트 보기
           </Typography>
