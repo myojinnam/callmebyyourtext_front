@@ -14,7 +14,7 @@ import {
   Wrapper,
 } from "../components/Styled";
 
-const MyPage = () => {
+const MyPage = ({ props }) => {
   // 변수 관리
   const navigate = useNavigate();
   const userName = localStorage.getItem("name");

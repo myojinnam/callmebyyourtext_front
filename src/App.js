@@ -57,7 +57,7 @@ const App = () => {
           <Route path="/createquestion" element={<CreateQuestion />}></Route>
           <Route path="/signin" element={<SignIn />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
-          <Route path="/mypage" element={<MyPage />}></Route>
+          <Route path="/mypage/:userId" element={<MyPage />}></Route>
           <Route path="/loginforcomment" element={<LoginForComment />}></Route>
           <Route path="/forentercomment" element={<ForEnterComment />}></Route>
           <Route

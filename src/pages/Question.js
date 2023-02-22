@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { primaryColor } from "../styles/GlobalStyle";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import PrimaryBtn from "../components/Button/PrimaryBtn";
 import Menu from "../assets/images/menu.png";
 import { AuthContext } from "../context/AuthContext";
@@ -14,6 +14,7 @@ import {
 } from "../components/Styled";
 
 const Question = () => {
+  const userId = localStorage.getItem("id");
   const navigate = useNavigate();
   const { isLoggedIn } = useContext(AuthContext);
   const goToSignIn = () => {
@@ -21,7 +22,7 @@ const Question = () => {
   };
   const goToMyPage = () => {
     if (isLoggedIn) {
-      navigate("/mypage");
+      navigate(`/mypage/${userId}`);
     } else {
       return alert("로그인 후 이용해주세요.");
     }
