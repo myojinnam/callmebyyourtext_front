@@ -65,7 +65,7 @@ export default function LoginForComment() {
         localStorage.setItem("auth", true);
         localStorage.setItem("token", response.data.token);
         alert("로그인되었습니다.");
-        navigate("/forEnterComment", { replace: true });
+        navigate("/forentercomment", { replace: true });
       })
       .catch((error) => {
         if (error.response.status === 400) {
