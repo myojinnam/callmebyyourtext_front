@@ -7,7 +7,7 @@ const Button = styled.button`
   height: 35px;
   border: 1px solid ${primaryColor};
   color: ${primaryColor};
-  background-color: white;
+  background-color: unset;
   border-radius: 5px;
   transition: 0.3s;
   &:hover {
