@@ -6,7 +6,7 @@ import Notification from "../assets/images/notification.png";
 
 function PointCheck({user, point}) {
   return (
-    <div className={styles.main}>
+    <div>
       <img src={Back} alt="error" />
       <div className={styles.topBtn}>
         <img src={Menu} alt="error" />

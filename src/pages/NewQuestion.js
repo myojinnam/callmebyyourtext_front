@@ -14,9 +14,9 @@ function NewQuestion({user, point}) {
     navigator.clipboard.writeText(window.document.location.href);
     alert("URL이 복사되었습니다!");
   }
-    
+  
   return (
-    <div className={styles.main}>
+    <div>
       <div className={styles.top}>
         <div className={styles.topBtn}>
           <img className={styles.menuImg} src={Menu} alt="error" />
@@ -44,15 +44,14 @@ function NewQuestion({user, point}) {
       </div>
       ) : (
       <div className={styles.createQuestion}>
-        <p className={styles.questionFont}>
-          질문이 생성되었습니다.<br/><br/>친구들에게 공유해보세요!
-        </p>
-        <br/>
-        <Button
-          btnName={"링크 복사"}/>
-        <br/>
-        <Button
-          btnName={"확인"}/>
+        <text className={styles.questionFont}>
+        &nbsp;&nbsp;질문이 생성되었습니다.<br/><br/>친구들에게 공유해보세요!
+        </text>
+          <Button 
+            btnName={"링크 복사"}
+            onClick={LinkCopy()}/>
+          <br/>
+          <Button btnName={"확인"}/>
       </div>
       )}
       

@@ -2,8 +2,6 @@
 .top {
   background-color: #ffffff;
   opacity: 63%;
-  padding-top: 30px;
-
   display: flex;
   flex-direction: column;
 }
@@ -17,12 +15,13 @@
 .menuImg {
   float: right;
   margin-right: 20px;
+  margin-top: 30px;
 }
 
 /* 알림창 버튼 */
 .notiImg {
   float: right;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-right: -45px;
 }
 
@@ -44,7 +43,7 @@
 
 /* 포인트 */
 .pointFont {
-  margin-left: 230px;
+  margin-left: 210px;
 }
 
 /* 하단 질문 부분 */
@@ -72,6 +71,8 @@
 .questionFont {
   color: #613B3E;
   font-size: 15px;
+  margin-top: 75px;
+  margin-bottom: 100px;
 }
 
 /* 뒷배경 꽃1 */
