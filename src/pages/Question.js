@@ -62,6 +62,10 @@ const Question = () => {
       return alert("로그인 후 이용해주세요.");
     }
   };
+
+  const onSubmit = (e) => {
+    alert(e.target);
+  };
   return (
     <>
       <LogIn onClick={goToSignIn}>로그인</LogIn>
@@ -89,7 +93,9 @@ const Question = () => {
           }}
           // onChange={onChange}
         />
-        <PrimaryBtn btnName={"답변 등록"}></PrimaryBtn>
+        <PrimaryBtn btnName={"답변 등록"} onClick={onSubmit}></PrimaryBtn>
+        <br />
+        <PrimaryBtn btnName={"sns 공유하기"}></PrimaryBtn>
       </Wrapper>
     </>
   );

@@ -52,6 +52,7 @@ const SignIn = () => {
     await axios
       .post("http://127.0.0.1:8000/login/login/", user)
       .then((response) => {
+        console.log(response);
         setIsLoggedIn(true);
         localStorage.setItem("auth", true);
         localStorage.setItem("id", response.data.id);
