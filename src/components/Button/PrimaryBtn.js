@@ -17,9 +17,9 @@ const Button = styled.button`
   }
 `;
 
-const PrimaryBtn = ({ btnName, onClick, type }) => {
+const PrimaryBtn = ({ btnName, onClick, type, width }) => {
   return (
-    <Button onClick={onClick} type={type}>
+    <Button onClick={onClick} type={type} style={{ width: width }}>
       {btnName}
     </Button>
   );
