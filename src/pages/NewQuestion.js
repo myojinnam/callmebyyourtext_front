@@ -17,7 +17,7 @@ const NewQuestion = ({ user, point }) => {
 
   return (
     <>
-      {/* <div className={styles.top}>
+      <div className={styles.top}>
         <div className={styles.topBtn}>
           <img className={styles.menuImg} src={Menu} alt="error" />
           <img className={styles.notiImg} src={Notification} alt="error" />
@@ -58,7 +58,7 @@ const NewQuestion = ({ user, point }) => {
       )}
 
       <img className={styles.img1} src={Background1} alt="error" />
-      <img className={styles.img2} src={Background2} alt="error" /> */}
+      <img className={styles.img2} src={Background2} alt="error" />
     </>
   );
 };

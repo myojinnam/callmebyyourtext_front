@@ -27,7 +27,7 @@ const MyPage = () => {
 
   // 모달 인풋 관리
   const goToNewQuestion = () => {
-    navigate("/newquestion");
+    navigate("/createquestion");
   };
 
   // 로그아웃 관리

@@ -13,6 +13,7 @@ import { AuthContext } from "./context/AuthContext";
 import MyPage from "./pages/MyPage";
 import Snowfall from "react-snowfall";
 import LoadingToLoginForComment from "./pages/LoadingToLoginForComment";
+import CreateQuestion from "./pages/CreateQuestion";
 
 const flowerFlake1 = document.createElement("img");
 flowerFlake1.src = "./assets/images/cherryblossom1.png";
@@ -48,6 +49,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/question" element={<Question />}></Route>
+          <Route path="/createquestion" element={<CreateQuestion />}></Route>
           <Route path="/signin" element={<SignIn />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/mypage" element={<MyPage />}></Route>
