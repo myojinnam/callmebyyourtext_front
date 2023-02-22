@@ -43,9 +43,10 @@ const MainTitle = styled.span`
   font-size: 0.8rem;
 `;
 
-export default function ForEnterComment({ user }) {
+export default function ForEnterComment() {
   // State-------------------------------------------------------------------
   const navigate = useNavigate();
+  const userName = localStorage.getItem("name");
   const { isLoggedIn } = useContext(AuthContext);
   // useEffect(() => {
   //   if (isLoggedIn) {
@@ -93,11 +94,11 @@ export default function ForEnterComment({ user }) {
     <>
       <Wrapper>
         <HeaderWrap>
-          <Header user={user} />
+          <Header user={userName} />
         </HeaderWrap>
         <Main>
           <MainTitle>
-            <b>{user}</b>님이 올린 질문입니다.
+            <b>{userName}</b>님이 올린 질문입니다.
           </MainTitle>
           <ul>
             <li>
@@ -108,7 +109,6 @@ export default function ForEnterComment({ user }) {
             <TextField
               id="filled-textarea"
               placeholder="답변달기"
-              autoFocus
               multiline
               variant="outlined"
               onChange={handleChange}
@@ -123,6 +123,7 @@ export default function ForEnterComment({ user }) {
                 marginBottom: 2,
                 width: `90%`,
                 margin: `2rem auto`,
+                boxShadow: `0px 3px 5px 0px rgba(0, 0, 0, 0.4)`,
               }}
             />
           )}
