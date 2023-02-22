@@ -14,6 +14,7 @@ import MyPage from "./pages/MyPage";
 import Snowfall from "react-snowfall";
 import LoadingToLoginForComment from "./pages/LoadingToLoginForComment";
 import CreateQuestion from "./pages/CreateQuestion";
+import EndToComment from "./pages/EndToComment";
 
 const flowerFlake1 = document.createElement("img");
 flowerFlake1.src = "./assets/images/cherryblossom1.png";
@@ -53,16 +54,16 @@ const App = () => {
           <Route path="/signin" element={<SignIn />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/mypage" element={<MyPage />}></Route>
-          <Route path="/loginForComment" element={<LoginForComment />}></Route>
+          <Route path="/loginforcomment" element={<LoginForComment />}></Route>
           <Route
-            path="/forEnterComment"
+            path="/forentercomment"
             element={<ForEnterComment user={"홍길동"} />}
           ></Route>
           <Route
-            path="/loadingToLoginForComment"
+            path="/loadingtologinforcomment"
             element={<LoadingToLoginForComment />}
           ></Route>
-
+          <Route path="/endtocomment" element={<EndToComment />}></Route>
           <Route path="/newquestion" element={<NewQuestion />}></Route>
           <Route path="/pointcheck" element={<PointCheck />}></Route>
         </Routes>
