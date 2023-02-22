@@ -1,17 +1,7 @@
-.main {
-  background-color: #fffdf6;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-}
-
 /* 상단 부분 */
 .top {
   background-color: #ffffff;
   opacity: 63%;
-  padding-top: 30px;
-
   display: flex;
   flex-direction: column;
 }
@@ -25,12 +15,13 @@
 .menuImg {
   float: right;
   margin-right: 20px;
+  margin-top: 30px;
 }
 
 /* 알림창 버튼 */
 .notiImg {
   float: right;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-right: -45px;
 }
 
@@ -52,7 +43,7 @@
 
 /* 포인트 */
 .pointFont {
-  margin-left: 230px;
+  margin-left: 210px;
 }
 
 /* 하단 질문 부분 */
@@ -77,23 +68,11 @@
   z-index: 1;
 }
 
-/* 질문 생성 버튼 */
-.addBtn {
-  width: 208px;
-  height: 39px;
-  font-size: 17px;
-  color: #d07c81;
-  background-color: unset;
-  border: 1px solid #D07C81;
-  border-radius: 5px;
-  margin-top: 25px;
-  box-shadow: 0px 2px 3px rgb(183, 183, 183);
-  z-index: 1;
-}
-.addBtn:hover {
-  color: white;
-  background-color: #D07C81;
-  cursor: pointer;
+.questionFont {
+  color: #613B3E;
+  font-size: 15px;
+  margin-top: 75px;
+  margin-bottom: 100px;
 }
 
 /* 뒷배경 꽃1 */
