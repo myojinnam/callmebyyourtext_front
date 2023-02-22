@@ -1,41 +1,22 @@
 import { Typography, Box, Modal } from "@mui/material";
 import React, { useContext, useState } from "react";
-import styled from "styled-components";
 import { pointColor, primaryColor } from "../styles/GlobalStyle";
 import Typewriter from "typewriter-effect";
 import PrimaryBtn from "../components/Button/PrimaryBtn";
 import HeartLogo from "../assets/images/inputId.png";
+import TitleLogo from "../assets/images/titleLogo.png";
 import { AuthContext } from "../context/AuthContext";
-
-const Wrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const Img = styled.img`
-  width: 20px;
-`;
-
-const LogOutText = styled.span`
-  cursor: pointer;
-`;
-
-const modalStyle = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 250,
-  bgcolor: "background.paper",
-  border: `1px solid ${primaryColor}`,
-  borderRadius: 3,
-  boxShadow: 24,
-  p: 4,
-};
+import { useNavigate } from "react-router-dom";
+import {
+  CursorText,
+  modalStyle,
+  SmallImg,
+  Wrapper,
+} from "../components/Styled";
 
 const MyPage = () => {
   // 변수 관리
+  const navigate = useNavigate();
   const userName = localStorage.getItem("name");
   const { setIsLoggedIn } = useContext(AuthContext);
 
@@ -43,6 +24,11 @@ const MyPage = () => {
   const [open, setOpen] = useState(false);
   const modalOpen = () => setOpen(true);
   const modalClose = () => setOpen(false);
+
+  // 모달 인풋 관리
+  const goToNewQuestion = () => {
+    navigate("/createquestion");
+  };
 
   // 로그아웃 관리
   const logout = () => {
@@ -67,7 +53,7 @@ const MyPage = () => {
           marginBottom: "30%",
         }}
       >
-        {userName}님의 페이지
+        <SmallImg src={TitleLogo} /> {userName}님의 페이지
       </Typography>
       <Wrapper>
         <Box
@@ -122,8 +108,9 @@ const MyPage = () => {
                 color: `${primaryColor}`,
               },
             }}
+            onClick={goToNewQuestion}
           >
-            <Img src={HeartLogo} /> 새로운 질문 만들기
+            <SmallImg src={HeartLogo} /> 새로운 질문 만들기
           </Typography>
           <Typography
             id="modal-modal-description"
@@ -140,7 +127,7 @@ const MyPage = () => {
               },
             }}
           >
-            <Img src={HeartLogo} /> 내 질문 리스트 보기
+            <SmallImg src={HeartLogo} /> 내 질문 리스트 보기
           </Typography>
           <Typography
             id="modal-modal-description"
@@ -156,9 +143,9 @@ const MyPage = () => {
               },
             }}
           >
-            <LogOutText>
+            <CursorText>
               <span onClick={logout}>로그아웃</span>
-            </LogOutText>
+            </CursorText>
           </Typography>
         </Box>
       </Modal>

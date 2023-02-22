@@ -1,24 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import Title from "../components/Title/Title";
 import { TextField, Box, Typography } from "@mui/material/";
-import styled from "styled-components";
 import PrimaryBtn from "../components/Button/PrimaryBtn";
 import { secondaryColor } from "../styles/GlobalStyle";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
-
-const Wrapper = styled.section`
-  text-align: center;
-`;
-
-const SignUpText = styled.span`
-  cursor: pointer;
-`;
-
-const BtnWrapper = styled.section`
-  text-align: center;
-`;
+import { CursorText, Wrapper } from "../components/Styled";
 
 const SignIn = () => {
   // State-------------------------------------------------------------------
@@ -42,6 +30,8 @@ const SignIn = () => {
       [name]: value,
     });
   };
+
+  // 버튼 관리----------------------------------------------------------------
   const onSubmit = async (e) => {
     e.preventDefault();
     const { email, password } = inputs;
@@ -52,6 +42,7 @@ const SignIn = () => {
     await axios
       .post("http://127.0.0.1:8000/login/login/", user)
       .then((response) => {
+        console.log(response);
         setIsLoggedIn(true);
         localStorage.setItem("auth", true);
         localStorage.setItem("id", response.data.id);
@@ -116,11 +107,9 @@ const SignIn = () => {
               marginBottom: 3,
             }}
           >
-            <SignUpText onClick={goToSignUp}>회원가입</SignUpText>
+            <CursorText onClick={goToSignUp}>회원가입</CursorText>
           </Typography>
-          <BtnWrapper>
-            <PrimaryBtn btnName={"Login"}></PrimaryBtn>
-          </BtnWrapper>
+          <PrimaryBtn btnName={"Login"}></PrimaryBtn>
         </Box>
         <PrimaryBtn btnName={"Google"}></PrimaryBtn>
       </Wrapper>
