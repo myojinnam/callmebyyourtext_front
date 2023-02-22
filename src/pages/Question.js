@@ -16,6 +16,10 @@ import {
 const Question = () => {
   const userId = localStorage.getItem("id");
   const navigate = useNavigate();
+  const copyLink = () => {
+    navigator.clipboard.writeText(window.document.location.href);
+    alert("주소가 복사되었습니다.");
+  };
   const { isLoggedIn } = useContext(AuthContext);
   const goToSignIn = () => {
     navigate("/signin");
@@ -62,7 +66,7 @@ const Question = () => {
         <br />
         <PrimaryBtn btnName={"SNS 공유하기"}></PrimaryBtn>
         <br />
-        <PrimaryBtn btnName={"주소 복사"}></PrimaryBtn>
+        <PrimaryBtn btnName={"주소 복사"} onClick={copyLink}></PrimaryBtn>
       </Wrapper>
     </>
   );
