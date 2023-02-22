@@ -4,7 +4,8 @@ import styled from "styled-components";
 import { primaryColor, secondaryColor } from "../../styles/GlobalStyle";
 
 const Head = styled.header`
-  width: 100%;
+  margin: 5rem auto;
+  width: 80%;
   background-color: white;
   border-bottom: #cb7980 2px solid;
   height: 20%;
