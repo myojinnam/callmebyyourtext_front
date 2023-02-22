@@ -12,6 +12,10 @@ import "../styles/LoginForComment.css";
 
 const Wrapper = styled.section`
   text-align: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 `;
 
 const BtnWrapper = styled.section`
@@ -82,7 +86,7 @@ export default function LoginForComment() {
   return (
     <>
       <Wrapper>
-        <Header user={"user"} />
+        <Header user={"페이지주인"} />
         <Box
           component="form"
           onSubmit={onSubmit}
@@ -90,11 +94,14 @@ export default function LoginForComment() {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
+            alignItems: "center",
             marginTop: 5,
             marginBottom: 2,
           }}
         >
-          <TextFieldWrap style={{ "margin-top": "9rem" }}>
+          <TextFieldWrap
+            style={{ "margin-top": "3rem", width: "90%", display: "flex" }}
+          >
             <Img src={InputId} />
             <TextField
               autoFocus
@@ -109,7 +116,9 @@ export default function LoginForComment() {
               onChange={onChange}
             />
           </TextFieldWrap>
-          <TextFieldWrap style={{ "margin-top": "1rem" }}>
+          <TextFieldWrap
+            style={{ "margin-top": "1rem", width: "90%", display: "flex" }}
+          >
             <Img src={InputPw} />
             <TextField
               required
